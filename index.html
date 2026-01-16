@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LocalBoost IA — Visibilité locale Google & IA</title>
-  <meta name="description" content="LocalBoost IA, consultant en visibilité locale Google & IA. J’aide les entreprises locales (tourisme, restaurants, activités, locations) à apparaître davantage sur Google Maps et dans les résultats de recherche nouvelle génération (IA). Audit gratuit 10 minutes." />
+  <meta name="description" content="LocalBoost IA, consultant en visibilité locale Google & IA. J’aide les entreprises locales (tourisme, restaurants, activités, locations) à apparaître davantage sur Google Maps et dans les réponses des moteurs de recherche IA. Audit gratuit 10 minutes." />
   <meta name="keywords" content="visibilité locale, google maps, google business profile, seo local, référencement local, IA recherche, consultant google maps, visibilité entreprise locale" />
   <meta property="og:title" content="LocalBoost IA — Visibilité Google & IA" />
   <meta property="og:description" content="Améliorez votre visibilité locale sur Google Maps et préparez votre entreprise aux recherches par IA. Audit gratuit." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta name="theme-color" content="#0B1220" />
+
   <style>
     :root{
       --bg:#0B1220;
@@ -62,21 +63,21 @@
       letter-spacing:.2px;
     }
     .logo{
-  width:40px;
-  height:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:none;
-  box-shadow:none;
-  border-radius:0;
-}
+      width:40px;
+      height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:none;
+      box-shadow:none;
+      border-radius:0;
+    }
     .logo img{
-  width:40px;
-  height:40px;
-  object-fit:contain;
-  display:block;
-}
+      width:40px;
+      height:40px;
+      object-fit:contain;
+      display:block;
+    }
     .brand-title{
       font-size:14px;
       opacity:.95;
@@ -224,6 +225,41 @@
     footer{padding: 28px 0 46px; border-top:1px solid var(--border); color: var(--muted)}
     .foot{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center}
 
+    /* New: Feature cards / grids */
+    .featureGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .featureCard{padding:16px}
+    .featureTop{display:flex; gap:10px; align-items:flex-start}
+    .iconBox{
+      width:38px; height:38px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(103,232,249,.10);
+      border:1px solid rgba(103,232,249,.22);
+      color:#CFFAFE;
+      font-weight:900;
+      flex: 0 0 38px;
+    }
+    .featureCard h3{margin:0 0 6px; font-size:16px}
+    .featureCard p{margin:0; color:var(--muted); font-size:14px}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      margin-top: 18px;
+      align-items:stretch;
+    }
+    .panelPad{padding:18px}
+    .muted{color:var(--muted)}
+    .callout{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center;
+      padding:16px;
+    }
+
     /* Responsive */
     @media (max-width: 980px){
       .grid{grid-template-columns: 1fr}
@@ -232,6 +268,8 @@
       .faq{grid-template-columns: 1fr}
       .contactGrid{grid-template-columns: 1fr}
       .links{display:none}
+      .featureGrid{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
     }
     @media (max-width: 520px){
       .formRow{grid-template-columns: 1fr}
@@ -239,6 +277,7 @@
       .heroCtas{width:100%}
     }
   </style>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -250,7 +289,7 @@
   "url": "https://localboost-ia.github.io",
   "sameAs": []
 }
-</script>
+  </script>
 </head>
 
 <body>
@@ -279,24 +318,32 @@
   </header>
 
   <main>
+    <!-- HERO (optimisé) -->
     <section class="hero">
       <div class="wrap grid">
         <div class="card heroLeft">
           <span class="kicker">Google Maps + IA-ready • Visibilité locale nouvelle génération</span>
-          <p style="margin:14px 0 6px; font-size:18px; font-weight:700; color:#E5E7EB">Faites apparaître votre entreprise plus clairement sur Google… et préparez-la aux recherches par IA.</p>
-          <h1>Consultant en visibilité locale Google & IA pour entreprises locales</h1>
-          <p class="sub">
-            J’aide les entreprises locales (tourisme, restos, activités, location) à optimiser leur <strong>Google Business Profile</strong>, à renforcer leur présence sur <strong>Google Maps</strong>, et à structurer leurs informations pour qu’elles soient <strong>compréhensibles et recommandables</strong> par les moteurs de recherche nouvelle génération.
+
+          <h1>J’aide les entreprises locales à apparaître plus souvent sur Google Maps et dans les réponses des moteurs de recherche IA</h1>
+
+          <p style="margin:10px 0 0; font-size:18px; font-weight:900; color:#E5E7EB">
+            Plus d’appels, plus de visites, plus de réservations — <span style="color:var(--muted); font-weight:800">sans publicité obligatoire.</span>
+          </p>
+
+          <p class="sub" style="margin-top:12px">
+            Consultant en visibilité locale Google & IA, j’accompagne les entreprises locales (tourisme, restaurants, activités, locations)
+            dans l’optimisation de leur <strong>Google Business Profile</strong>, leur présence sur <strong>Google Maps</strong> et la
+            <strong>structuration de leurs informations</strong> pour être mieux comprises et recommandées.
           </p>
 
           <div class="heroCtas">
-            <a class="btn primary" href="#contact">Réserver un audit gratuit</a>
-            <a class="btn" href="#offres">Découvrir les packs</a>
+            <a class="btn primary" href="#contact">Audit gratuit de votre visibilité – 10 min</a>
+            <a class="btn" href="#offres">Voir les packs</a>
           </div>
 
           <div class="badges" aria-label="Points clés">
             <div class="badge">✅ Intervention rapide (5–7 jours)</div>
-            <div class="badge">✅ Sans pub obligatoire</div>
+            <div class="badge">✅ Sans jargon</div>
             <div class="badge">✅ Clair, mesurable, durable</div>
             <div class="badge">✅ Possible à distance</div>
           </div>
@@ -325,6 +372,104 @@
       </div>
     </section>
 
+    <!-- NOUVELLE SECTION (Problème → Solution → Ce que je fais) -->
+    <section id="pourquoi">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <h2>Pourquoi votre entreprise est (souvent) moins visible sur Google</h2>
+            <p>La plupart des TPE perdent des clients simplement parce que leur fiche est incomplète, incohérente ou mal comprise par Google et les moteurs de recherche IA.</p>
+          </div>
+          <a class="btn" href="#contact">Audit gratuit 10 min</a>
+        </div>
+
+        <div class="featureGrid">
+          <div class="card featureCard">
+            <div class="featureTop">
+              <div class="iconBox">📍</div>
+              <div>
+                <h3>Fiche Google pas optimisée</h3>
+                <p>Catégories, services, description, photos… des détails qui changent tout sur Google Maps.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card featureCard">
+            <div class="featureTop">
+              <div class="iconBox">🧩</div>
+              <div>
+                <h3>Infos dispersées / incohérentes</h3>
+                <p>Nom, horaires, téléphone, site… si ce n’est pas cohérent, Google baisse la confiance.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card featureCard">
+            <div class="featureTop">
+              <div class="iconBox">🤖</div>
+              <div>
+                <h3>Pas “IA-ready”</h3>
+                <p>Les moteurs IA recommandent ce qu’ils comprennent clairement : activité, services, zone, preuves.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card panelPad">
+            <h3 style="margin:0 0 6px">La solution : visibilité locale claire, structurée et durable</h3>
+            <p class="muted" style="margin:0">On renforce votre présence là où vos clients vous cherchent : Google Maps, Google… et les réponses IA.</p>
+
+            <div class="featureGrid" style="grid-template-columns:1fr; margin-top:14px">
+              <div class="mini">
+                <h3 style="margin:0 0 6px">📞 Plus de contacts qualifiés</h3>
+                <p>Appels, itinéraires, clics vers votre site, demandes de réservation.</p>
+              </div>
+              <div class="mini">
+                <h3 style="margin:0 0 6px">⭐ Plus de confiance</h3>
+                <p>Avis, photos, réponses, cohérence : vous rassurez avant même le premier contact.</p>
+              </div>
+              <div class="mini">
+                <h3 style="margin:0 0 6px">🧠 Mieux compris par Google & IA</h3>
+                <p>Services structurés, Q&A, description claire : vous êtes plus facilement recommandés.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card panelPad">
+            <h3 style="margin:0 0 6px">Ce que j’optimise concrètement</h3>
+            <p class="muted" style="margin:0">Une checklist simple, orientée résultats.</p>
+            <ul class="list" style="margin-top:12px">
+              <li><span class="tick">✓</span> Google Business Profile (catégories, services, description)</li>
+              <li><span class="tick">✓</span> Photos & couverture (attractivité)</li>
+              <li><span class="tick">✓</span> Avis & réponses (confiance)</li>
+              <li><span class="tick">✓</span> Q&A (questions fréquentes + IA-ready)</li>
+              <li><span class="tick">✓</span> Cohérence web (nom, adresse, téléphone, liens)</li>
+            </ul>
+
+            <div class="mini" style="margin-top:12px">
+              <h3 style="margin:0 0 6px">Prêt à voir ce qui bloque ?</h3>
+              <p>Audit gratuit 10 minutes, sans engagement.</p>
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn primary" href="#contact">Demander l’audit</a>
+                <a class="btn" href="#offres">Comparer les packs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card callout" style="margin-top:16px">
+          <div>
+            <div style="font-weight:900; font-size:16px">Pour qui ?</div>
+            <div class="muted">Tourisme • Restaurants • Activités • Locations • Artisans & commerces locaux</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+            <div class="badge">Local • Simple • Actionnable</div>
+            <a class="btn primary" href="#contact">Audit gratuit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFRES (inchangé) -->
     <section id="offres">
       <div class="wrap">
         <div class="sectionHead">
@@ -438,8 +583,8 @@
     </section>
 
     <section id="faq">
-<!-- Données structurées FAQ pour Google & IA -->
-<script type="application/ld+json">
+      <!-- Données structurées FAQ pour Google & IA -->
+      <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -449,7 +594,8 @@
     {"@type": "Question","name": "La prestation peut-elle être faite à distance ?","acceptedAnswer": {"@type": "Answer","text": "Oui, l’audit et l’optimisation Google Business Profile peuvent être réalisés entièrement à distance."}}
   ]
 }
-</script>
+      </script>
+
       <div class="wrap">
         <div class="sectionHead">
           <div>
@@ -620,7 +766,6 @@
         msg: data.get('msg') || ''
       };
 
-      // TODO: remplace l'email ci-dessous par le tien
       const to = 'corentin.rgn@gmail.com';
 
       const subject = encodeURIComponent(`[Audit Google & IA] ${payload.company} — ${payload.pack}`);
@@ -628,7 +773,7 @@
 `Bonjour,\n\nJe souhaite un audit / devis pour améliorer notre visibilité Google Maps & IA.\n\n— Informations —\nNom : ${payload.name}\nEntreprise : ${payload.company}\nEmail : ${payload.email}\nTéléphone : ${payload.phone}\nZone : ${payload.zone}\nFiche Google (lien) : ${payload.link}\nPack souhaité : ${payload.pack}\n\nMessage :\n${payload.msg}\n\nMerci !`
       );
 
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.location.href = \`mailto:\${to}?subject=\${subject}&body=\${body}\`;
     });
   </script>
 </body>
