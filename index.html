@@ -166,14 +166,22 @@
     /* Pricing */
     .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top:18px}
     .priceCard{padding:18px; position:relative; overflow:hidden}
-    .tag{
-      position:absolute; top:14px; right:14px;
-      font-size:12px; font-weight:900;
-      padding:6px 10px; border-radius:999px;
-      background: rgba(103,232,249,.10);
-      border:1px solid rgba(103,232,249,.25);
-      color:#CFFAFE;
-    }
+   .tag{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  top:auto;
+
+  font-size:12px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+
+  background: rgba(103,232,249,.10);
+  border:1px solid rgba(103,232,249,.25);
+  color:#CFFAFE;
+}
+
     .priceTitle{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
     .priceTitle h3{margin:0; font-size:18px}
     .price{font-size:30px; font-weight:900}
