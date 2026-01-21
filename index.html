@@ -589,6 +589,201 @@
         </div>
       </div>
     </section>
+<!-- ✅ AJOUTER CETTE SECTION ENTRE </section id="methode"> ET <section id="faq"> -->
+
+<section id="temoignages">
+  <div class="wrap">
+    <div class="sectionHead">
+      <div>
+        <h2>Ils nous font confiance</h2>
+        <p>3 retours clients (anonymisés à la demande) — l’objectif : plus d’appels, plus d’itinéraires, plus de demandes.</p>
+      </div>
+      <a class="btn" href="#contact">Demander l’audit</a>
+    </div>
+
+    <div class="testiGrid">
+      <!-- Card 1 -->
+      <article class="card testiCard">
+        <div class="testiTop">
+          <div class="stars" aria-label="5 étoiles">
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+          </div>
+          <span class="testiTag">Restaurant</span>
+        </div>
+
+        <h3 class="testiTitle">“On a clairement vu la différence en moins d’un mois.”</h3>
+        <p class="testiText">
+          La fiche Google était mal structurée et peu visible. Après optimisation (catégories, description, photos, posts),
+          on a constaté <strong>plus d’appels et de demandes d’itinéraire</strong>, surtout le week-end.
+          <strong>Simple, efficace et très pro.</strong>
+        </p>
+
+        <div class="testiMeta">
+          <span class="testiMetaPrimary">Restaurant indépendant</span>
+          <span class="testiDot">•</span>
+          <span class="testiMetaSecondary">Centre-ville</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card testiCard">
+        <div class="testiTop">
+          <div class="stars" aria-label="5 étoiles">
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+          </div>
+          <span class="testiTag">Gîte</span>
+        </div>
+
+        <h3 class="testiTitle">“Enfin visible sur les bonnes recherches.”</h3>
+        <p class="testiText">
+          Notre établissement n’apparaissait presque jamais sur Google Maps.
+          L’optimisation (services, description, FAQ, photos) nous a permis de ressortir sur des recherches locales clés.
+          Résultat : <strong>plus de clics vers le site et davantage de demandes directes</strong>.
+        </p>
+
+        <div class="testiMeta">
+          <span class="testiMetaPrimary">Gîte rural</span>
+          <span class="testiDot">•</span>
+          <span class="testiMetaSecondary">Sud de la France</span>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card testiCard">
+        <div class="testiTop">
+          <div class="stars" aria-label="5 étoiles">
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+            <span class="star" aria-hidden="true"></span>
+          </div>
+          <span class="testiTag">Location de vélos</span>
+        </div>
+
+        <h3 class="testiTitle">“Des clients qui nous trouvent sans publicité.”</h3>
+        <p class="testiText">
+          Grâce à l’optimisation de notre fiche Google, on a gagné en visibilité sur Maps, notamment sur les recherches
+          liées aux vélos électriques. On reçoit maintenant <strong>des appels et des visites en boutique</strong>
+          provenant directement de Google, <strong>sans budget pub</strong>.
+        </p>
+
+        <div class="testiMeta">
+          <span class="testiMetaPrimary">Location de vélos</span>
+          <span class="testiDot">•</span>
+          <span class="testiMetaSecondary">Zone touristique</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="testiFootnote">
+      * Témoignages anonymisés à la demande des clients. Les résultats peuvent varier selon le secteur, la zone et la concurrence.
+    </p>
+  </div>
+</section>
+
+<style>
+  /* ====== Testimonials — calé sur ta charte (variables :root) ====== */
+  .testiGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:14px;
+    margin-top:18px;
+  }
+  @media (max-width: 980px){
+    .testiGrid{ grid-template-columns: 1fr; }
+  }
+
+  .testiCard{
+    padding:16px;
+    border-radius: var(--radius2);
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display:grid;
+    gap:12px;
+    transition: transform .12s ease, border-color .12s ease, background .12s ease;
+  }
+  .testiCard:hover{
+    transform: translateY(-1px);
+    border-color: rgba(103,232,249,.25);
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+  }
+
+  .testiTop{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .testiTag{
+    font-size:12px;
+    font-weight:900;
+    padding:6px 10px;
+    border-radius:999px;
+    background: rgba(103,232,249,.10);
+    border:1px solid rgba(103,232,249,.25);
+    color:#CFFAFE;
+    white-space:nowrap;
+  }
+
+  .testiTitle{
+    margin:0;
+    font-size:16px;
+    line-height:1.35;
+    letter-spacing:-0.01em;
+    color: var(--txt);
+  }
+  .testiText{
+    margin:0;
+    font-size:14px;
+    line-height:1.65;
+    color: var(--muted);
+  }
+  .testiText strong{
+    color: var(--txt);
+    font-weight:900;
+  }
+
+  .testiMeta{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    color: var(--muted);
+    margin-top:2px;
+  }
+  .testiMetaPrimary{
+    font-weight:900;
+    color: var(--txt);
+  }
+  .testiDot{ opacity:.7; }
+
+  .testiFootnote{
+    margin: 14px 0 0;
+    font-size:12px;
+    color: var(--muted);
+  }
+
+  /* Stars (CSS mask) — utilise ton --accent */
+  .stars{display:inline-flex; gap:4px; align-items:center}
+  .star{
+    width:16px; height:16px; display:inline-block;
+    background: var(--accent);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E") center / contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+</style>
 
     <section id="faq">
       <!-- Données structurées FAQ pour Google & IA -->
