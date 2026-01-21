@@ -476,6 +476,264 @@
         </div>
       </div>
     </section>
+<!-- ====== SECTION : STATISTIQUES (chiffres animés) ====== -->
+<section id="stats" class="lbStats">
+  <div class="wrap">
+    <div class="sectionHead">
+      <div>
+        <h2>Statistiques qui parlent</h2>
+        <p>Optimiser votre fiche Google Business Profile = plus de visibilité, plus d’appels, plus de clients (sans pub obligatoire).</p>
+      </div>
+      <a class="btn" href="#contact">Demander l’audit</a>
+    </div>
+
+    <div class="statsGrid" aria-label="Chiffres clés">
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">📍</div>
+          <div class="statNum">
+            <span class="count" data-value="46" data-suffix="%">0</span>
+          </div>
+        </div>
+        <h3>des recherches Google sont locales</h3>
+        <p>Vos clients vous cherchent “près de moi” — surtout sur mobile.</p>
+      </article>
+
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">🏆</div>
+          <div class="statNum">
+            <span class="count" data-value="90" data-suffix="%">0</span>
+          </div>
+        </div>
+        <h3>des clics vont aux 3 premiers résultats</h3>
+        <p>Si vous n’êtes pas dans le top local, vous laissez des clients à la concurrence.</p>
+      </article>
+
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">📞</div>
+          <div class="statNum">
+            <span class="count" data-value="60" data-prefix="+"
+              data-suffix="%">0</span>
+          </div>
+        </div>
+        <h3>d’appels avec une fiche complète</h3>
+        <p>Catégories, services, description et CTA : ça convertit.</p>
+      </article>
+
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">🧭</div>
+          <div class="statNum">
+            <span class="count" data-value="50" data-prefix="+"
+              data-suffix="%">0</span>
+          </div>
+        </div>
+        <h3>de demandes d’itinéraire</h3>
+        <p>Photos + infos fiables = plus de visites en boutique / sur place.</p>
+      </article>
+
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">⚡</div>
+          <div class="statNum">
+            <span class="count" data-value="76" data-suffix="%">0</span>
+          </div>
+        </div>
+        <h3>des recherches locales déclenchent une action sous 24h</h3>
+        <p>Appel, itinéraire, réservation : intention d’achat immédiate.</p>
+      </article>
+
+      <article class="card statCard">
+        <div class="statTop">
+          <div class="statIcon">⭐</div>
+          <div class="statNum">
+            <span class="count" data-value="50" data-suffix="+">0</span>
+          </div>
+        </div>
+        <h3>avis = seuil de confiance</h3>
+        <p>À partir de là, les prospects hésitent moins et contactent plus vite.</p>
+      </article>
+    </div>
+
+    <div class="card statsCallout">
+      <div>
+        <div class="statsCalloutTitle">En clair :</div>
+        <div class="muted">Une fiche optimisée peut générer <strong>jusqu’à 2× plus d’appels et de visites</strong>, sans publicité.</div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+        <a class="btn primary" href="#contact">Audit gratuit 10 min</a>
+        <a class="btn" href="#offres">Voir les packs</a>
+      </div>
+    </div>
+
+    <p class="statsFootnote">
+      * Chiffres indicatifs issus de tendances observées en référencement local (les résultats varient selon secteur, zone et concurrence).
+    </p>
+  </div>
+</section>
+
+<style>
+  /* ====== Stats (animées) — calé sur ta charte ====== */
+  .lbStats{ padding: 34px 0; }
+
+  .statsGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 980px){
+    .statsGrid{ grid-template-columns: 1fr; }
+  }
+
+  .statCard{
+    padding: 16px;
+    border-radius: var(--radius2);
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    position:relative;
+  }
+  .statCard::after{
+    content:"";
+    position:absolute; inset:-1px;
+    background:
+      radial-gradient(500px 220px at 20% 0%, rgba(103,232,249,.12), transparent 60%),
+      radial-gradient(520px 260px at 90% 10%, rgba(167,139,250,.10), transparent 60%);
+    pointer-events:none;
+    opacity:.9;
+  }
+  .statCard > *{ position:relative; z-index:1; }
+
+  .statTop{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom: 8px;
+  }
+
+  .statIcon{
+    width:42px; height:42px;
+    border-radius: 16px;
+    display:grid; place-items:center;
+    background: rgba(103,232,249,.10);
+    border:1px solid rgba(103,232,249,.22);
+    color:#CFFAFE;
+    font-weight:900;
+    flex: 0 0 42px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  }
+
+  .statNum{
+    font-size: 34px;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .statNum .count{
+    background: linear-gradient(90deg, rgba(103,232,249,1), rgba(167,139,250,1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 8px 24px rgba(0,0,0,.18);
+  }
+
+  .statCard h3{
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .statCard p{
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .statsCallout{
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: var(--radius2);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 14px;
+    flex-wrap:wrap;
+  }
+  .statsCalloutTitle{
+    font-weight: 950;
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  .statsCallout strong{ color: var(--txt); font-weight: 950; }
+
+  .statsFootnote{
+    margin: 12px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+    opacity: .95;
+  }
+</style>
+
+<script>
+  // ====== Animation chiffres (IntersectionObserver + requestAnimationFrame) ======
+  (function(){
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counters = Array.from(document.querySelectorAll('#stats .count'));
+    if (!counters.length) return;
+
+    function formatNumber(n){
+      // int only (stats are % or thresholds). If you want decimals later, adjust here.
+      return Math.round(n).toString();
+    }
+
+    function animateCounter(el){
+      const target = parseFloat(el.dataset.value || "0");
+      const prefix = el.dataset.prefix || "";
+      const suffix = el.dataset.suffix || "";
+      const duration = prefersReduced ? 0 : 900; // ms
+      const start = performance.now();
+      const from = 0;
+
+      function tick(now){
+        const t = Math.min((now - start) / duration, 1);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = from + (target - from) * eased;
+        el.textContent = `${prefix}${formatNumber(current)}${suffix}`;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+
+      if (duration === 0){
+        el.textContent = `${prefix}${formatNumber(target)}${suffix}`;
+        return;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Run once when section enters viewport
+    const section = document.getElementById('stats');
+    let done = false;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !done){
+          done = true;
+          counters.forEach(animateCounter);
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    if (section) io.observe(section);
+    else counters.forEach(animateCounter);
+  })();
+</script>
+<!-- ====== /SECTION : STATISTIQUES ====== -->
 
     <!-- OFFRES (inchangé) -->
     <section id="offres">
