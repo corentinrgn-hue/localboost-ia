@@ -50,6 +50,13 @@
       background: rgba(11,18,32,.65);
       border-bottom:1px solid var(--border);
     }
+    .searchbar-wrapper {
+  position: sticky;
+  top: 72px;              /* hauteur du header */
+  z-index: 100;
+  background: rgba(255,255,255,.9); /* ou dark selon ton thème */
+  backdrop-filter: blur(6px);
+}
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
@@ -359,6 +366,9 @@
     </div>
   </div>
 </header>
+<div class="searchbar-wrapper">
+  <!-- ton formulaire / input -->
+</div>
 
 
   <main>
