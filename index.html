@@ -284,6 +284,40 @@
       .btn{width:100%}
       .heroCtas{width:100%}
     }
+    /* =========================
+   FIX HERO SMARTPHONE SIZE
+   ========================= */
+
+.heroV2Grid{
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+}
+
+.heroV2Right{
+  justify-self: end;
+}
+
+.heroV2PhoneWrap{
+  width: 300px;
+  max-width: 100%;
+}
+
+.heroV2Phone{
+  width: 100%;
+  height: auto;
+  transform: translateY(6px);
+}
+
+@media (max-width: 820px){
+  .heroV2Grid{
+    grid-template-columns: 1fr;
+  }
+  .heroV2Right{
+    justify-self: center;
+    margin-top: 24px;
+  }
+}
+
   </style>
 
   <script type="application/ld+json">
