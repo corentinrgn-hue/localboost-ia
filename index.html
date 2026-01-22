@@ -23,6 +23,9 @@
       --accent2:#A78BFA;
       --ok:#34D399;
       --warn:#FBBF24;
+      --cta-green: #22C55E;
+      --cta-green-dark: #16A34A;
+      --cta-green-soft: rgba(34,197,94,.18);
       --border:rgba(229,231,235,.12);
       --shadow: 0 20px 60px rgba(0,0,0,.35);
       --radius: 18px;
@@ -56,6 +59,30 @@
 }
 body{
   padding-top: 76px; /* ajuste selon la hauteur réelle du header */
+}
+.btn.cta{
+  background: linear-gradient(
+    135deg,
+    var(--cta-green),
+    #4ADE80
+  );
+  color: #052E16;
+  border: 1px solid rgba(34,197,94,.45);
+  box-shadow:
+    0 10px 30px rgba(34,197,94,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  font-weight: 900;
+}
+
+.btn.cta:hover{
+  background: linear-gradient(
+    135deg,
+    var(--cta-green-dark),
+    var(--cta-green)
+  );
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 36px rgba(34,197,94,.45);
 }
 
     .nav{
