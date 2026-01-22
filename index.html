@@ -345,6 +345,66 @@ body{
     margin-top: 24px;
   }
 }
+/* =========================
+   STATS V2 — centrées + sans icônes
+   ========================= */
+
+.statsGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+@media (max-width: 980px){
+  .statsGrid{ grid-template-columns: 1fr; }
+}
+
+.statCard{
+  padding: 18px;
+  text-align: center;              /* ✅ centre tout */
+}
+
+/* On garde le style de fond mais on retire l’icône */
+.statTop{
+  display:flex;
+  align-items:center;
+  justify-content:center;          /* ✅ chiffre centré */
+  margin-bottom: 10px;
+}
+
+/* Optionnel : si une ancienne .statIcon existe encore, on la masque */
+.statIcon{ display:none !important; }
+
+.statNum{
+  font-size: 56px;                 /* ✅ chiffre plus grand */
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 520px){
+  .statNum{ font-size: 48px; }
+}
+
+.statCard h3{
+  margin: 8px 0 6px;
+  font-size: 16px;                /* un peu plus lisible */
+  line-height: 1.35;
+}
+
+.statCard p{
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.statsCallout{
+  text-align: center;
+  justify-content: center;
+}
+.statsCallout > div{
+  flex: 0 0 auto;
+}
 
   </style>
 
@@ -534,7 +594,6 @@ par Google et les moteurs de recherche nouvelle génération.
     <div class="statsGrid" aria-label="Chiffres clés">
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">📍</div>
           <div class="statNum">
             <span class="count" data-value="46" data-suffix="%">0</span>
           </div>
@@ -545,7 +604,6 @@ par Google et les moteurs de recherche nouvelle génération.
 
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">🏆</div>
           <div class="statNum">
             <span class="count" data-value="90" data-suffix="%">0</span>
           </div>
@@ -556,7 +614,6 @@ par Google et les moteurs de recherche nouvelle génération.
 
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">📞</div>
           <div class="statNum">
             <span class="count" data-value="60" data-prefix="+"
               data-suffix="%">0</span>
@@ -568,7 +625,6 @@ par Google et les moteurs de recherche nouvelle génération.
 
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">🧭</div>
           <div class="statNum">
             <span class="count" data-value="50" data-prefix="+"
               data-suffix="%">0</span>
@@ -580,7 +636,6 @@ par Google et les moteurs de recherche nouvelle génération.
 
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">⚡</div>
           <div class="statNum">
             <span class="count" data-value="76" data-suffix="%">0</span>
           </div>
@@ -591,7 +646,6 @@ par Google et les moteurs de recherche nouvelle génération.
 
       <article class="card statCard">
         <div class="statTop">
-          <div class="statIcon">⭐</div>
           <div class="statNum">
             <span class="count" data-value="50" data-suffix="+">0</span>
           </div>
