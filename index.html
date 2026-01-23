@@ -620,16 +620,32 @@ header a:hover, nav a:hover{
         </div>
 
         <div class="card callout" style="margin-top:16px">
-          <div>
-            <div style="font-weight:900; font-size:16px">Pour qui ?</div>
-            <p>J’accompagne en priorité les structures touristiques, mais aussi toute entreprise locale pour qui Google Maps est un levier clé de clientèle.</p>
-               <p><strong>Hébergements, restaurants, activités de loisirs, artisants locaux</strong></p>
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-            <div class="badge">Local • Simple • Actionnable</div>
-            <a class="btn primary heroV2Btn" href="#contact">Audit gratuit</a>
-          </div>
-        </div>
+         <div class="whoGrid">
+  <div class="whoCard">
+    <div class="whoIcon">🏨</div>
+    <h4>Hébergements</h4>
+    <p>Gîtes, hôtels, chambres d’hôtes</p>
+  </div>
+
+  <div class="whoCard">
+    <div class="whoIcon">🍽️</div>
+    <h4>Restaurants</h4>
+    <p>Indépendants, bars, tables locales</p>
+  </div>
+
+  <div class="whoCard">
+    <div class="whoIcon">🎯</div>
+    <h4>Activités de loisirs</h4>
+    <p>Outdoor, visites, expériences</p>
+  </div>
+
+  <div class="whoCard">
+    <div class="whoIcon">🛠️</div>
+    <h4>Artisans locaux</h4>
+    <p>Entreprises visibles sur Maps</p>
+  </div>
+</div>
+
       </div>
     </section>
 <!-- ====== SECTION : STATISTIQUES (chiffres animés) ====== -->
@@ -819,6 +835,44 @@ header a:hover, nav a:hover{
     color: var(--muted);
     opacity: .95;
   }
+
+.whoGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin-top:16px;
+}
+
+.whoCard{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  transition:transform .15s ease, border-color .15s ease;
+}
+
+.whoCard:hover{
+  transform:translateY(-2px);
+  border-color:rgba(103,232,249,.35);
+}
+
+.whoIcon{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.whoCard h4{
+  margin:0 0 4px;
+  font-size:15px;
+}
+
+.whoCard p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+  
 </style>
 
 <script>
