@@ -452,6 +452,25 @@ header a:hover, nav a:hover{
   opacity: 1;
 }
 
+    .whoGrid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+  margin-top:16px;
+}
+
+    @media (max-width: 900px){
+  .whoGrid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .whoGrid{
+    grid-template-columns:1fr;
+  }
+}
+
     
   </style>
 
