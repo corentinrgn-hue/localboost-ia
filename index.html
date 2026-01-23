@@ -16,10 +16,11 @@
 
   <style>
     :root{
-      --bg:#111C33;
+      --bg:#F6F8FB;
       --panel:#111A2E;
       --panel2:#0F172A;
-      --txt:#E5E7EB;
+      --txt:#0B1220;
+      --card:#FFFFFF;
       --muted:#A7B0C0;
       --accent:#67E8F9;
       --accent2:#A78BFA;
@@ -413,8 +414,20 @@ body{
     font-size: 56px;
   }
 }
-
-
+body{
+  background: var(--bg);
+  color: var(--txt);
+}
+.hero{
+  background: linear-gradient(180deg, #070B13, #0B1220);
+  color: white;
+}
+.card{
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+    
   </style>
 
   <script type="application/ld+json">
