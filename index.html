@@ -20,14 +20,14 @@
       --panel:#111A2E;
       --panel2:#0F172A;
       --txt:#0B1220;
-      --card:#FFFFFF;
+      --card:#EAF2FF;
       --muted:#5B6475;
       --stroke:rgba(15,23,42,.10);
       --accent:#67E8F9;
       --accent2:#A78BFA;
       --ok:#34D399;
       --warn:#FBBF24;
-      --cta-green: #2E7D32;
+      --cta-green: #16A34A;
       --cta-green-hover: #256628;
       --cta-green-text: #ECFDF3;
       --border:rgba(229,231,235,.12);
@@ -415,20 +415,76 @@ body{
     font-size: 56px;
   }
 }
-body{ background:var(--bg); color:var(--txt); }
-
-.section{ padding:72px 0; }
-.container{ max-width:1120px; margin:0 auto; padding:0 18px; }
-
-.card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:18px;
-  box-shadow: 0 12px 30px rgba(2,6,23,.06);
+body{
+  background: var(--bg);
+  color: var(--txt);
 }
 
-p, li{ color:var(--muted); }
-h1,h2,h3{ color:var(--txt); }
+/* Textes */
+p, li{
+  color: var(--muted);
+}
+
+h1, h2, h3, h4{
+  color: var(--txt);
+}
+
+/* Cards */
+.card, 
+.statCard, 
+.pricingCard, 
+.testimonialCard, 
+.faqItem, 
+.box{
+  background: var(--card);
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+/* Hero (tu gardes sombre) */
+.hero{
+  background: linear-gradient(180deg, #070B13, #0B1220);
+  color: white;
+}
+
+.hero p{
+  color: rgba(255,255,255,.8);
+}
+
+/* Boutons CTA */
+.btnPrimary,
+button[type="submit"]{
+  background: var(--cta);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(22,163,74,.25);
+  transition: all .2s ease;
+}
+
+.btnPrimary:hover,
+button[type="submit"]:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(22,163,74,.32);
+}
+
+/* Inputs */
+input, textarea, select{
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--txt);
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border-color: rgba(22,163,74,.6);
+  box-shadow: 0 0 0 4px rgba(22,163,74,.12);
+}
     
   </style>
 
