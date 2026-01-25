@@ -1897,7 +1897,8 @@ header a:hover, nav a:hover{
 `Bonjour,\n\nJe souhaite un audit / devis pour améliorer notre visibilité Google Maps & IA.\n\n— Informations —\nNom : ${payload.name}\nEntreprise : ${payload.company}\nEmail : ${payload.email}\nTéléphone : ${payload.phone}\nZone : ${payload.zone}\nFiche Google (lien) : ${payload.link}\nPack souhaité : ${payload.pack}\n\nMessage :\n${payload.msg}\n\nMerci !`
       );
 
-      window.location.href = \`mailto:\${to}?subject=\${subject}&body=\${body}\`;
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
     });
   </script>
 
