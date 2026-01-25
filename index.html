@@ -1136,12 +1136,16 @@ header a:hover, nav a:hover{
 </div>
 
 
-      <div class="gmbBody">
-        <div class="gmbTitleRow">
-          <h3 class="gmbTitle">Le Chalet des Cimes</h3>
-          <br>Restaurant de montagne, retaurant français, brasserie alpine</br>
-          <span class="gmbCat">Restaurant savoyard</span>
-        </div>
+    <div class="gmbTitleRow">
+  <div class="gmbTitleBlock">
+    <h3 class="gmbTitle">Le Chalet des Cimes</h3>
+    <div class="gmbSubCats">
+      Restaurant de montagne · Restaurant français · Brasserie alpine
+    </div>
+  </div>
+  <span class="gmbCat">Restaurant savoyard</span>
+</div>
+
 
         <div class="gmbRatingRow">
           <div class="gmbStars">
@@ -1443,6 +1447,20 @@ header a:hover, nav a:hover{
   overflow:hidden;
 }
 
+.gmbTitleBlock{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.gmbSubCats{
+  font-size:12.5px;
+  color: var(--muted);
+  font-weight:600;
+  line-height:1.3;
+}
+
+  
 .gmbTop{
   display:flex;align-items:center;justify-content:space-between;
   padding:12px 14px;border-bottom:1px solid var(--border)
