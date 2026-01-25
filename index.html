@@ -2057,54 +2057,57 @@ header a:hover, nav a:hover{
       }
 
 
-    timers.push(setTimeout(()=>{
-      fill.style.width = '85%';
-      step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
-      if(chipPhotos) chipPhotos.classList.add('primary');
+// Étape 4 — photos + posts
+timers.push(setTimeout(() => {
+  fill.style.width = '85%';
+  step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
+  if (chipPhotos) chipPhotos.classList.add('primary');
 
-     // Étape 4 — Photos réelles du restaurant
-const photos = [
-  { el: p1, src: "assets/resto-1.png" }, // façade / entrée
-  { el: p2, src: "assets/resto-2.png" }, // plat signature
-  { el: p3, src: "assets/resto-3.png" }  // salle / ambiance
-];
+  // Photos réelles du restaurant
+  const photos = [
+    { el: p1, src: "assets/resto-1.png" },
+    { el: p2, src: "assets/resto-2.png" },
+    { el: p3, src: "assets/resto-3.png" }
+  ];
 
-photos.forEach((ph, i) => {
-  if (!ph.el) return;
-  timers.push(setTimeout(() => {
-    ph.el.classList.remove('gmbSkel');
-    ph.el.style.backgroundImage = `url('${ph.src}')`;
-    ph.el.classList.add('reveal');
-    pulse(ph.el);
-  }, i * 700)); // ⬅️ apparition progressive
-});
+  photos.forEach((ph, i) => {
+    if (!ph.el) return;
+    timers.push(setTimeout(() => {
+      ph.el.classList.remove('gmbSkel');
+      ph.el.style.backgroundImage = `url('${ph.src}')`;
+      ph.el.classList.add('reveal');
+      pulse(ph.el);
+    }, i * 700));
+  });
 
+  // Posts
+  if (optPosts) optPosts.classList.add('active');
 
-          if(optPosts) optPosts.classList.add('active');
+  const posts = [
+    { el: post1, txt: "🍽️ Menu du jour — Réservez" },
+    { el: post2, txt: "⭐ Nouveaux avis — Merci !" }
+  ];
 
-      const posts = [
-        {el: post1, txt: "🍽️ Menu du jour — Réservez"},
-        {el: post2, txt: "⭐ Nouveaux avis — Merci !"}
-      ];
+  posts.forEach((pp, i) => {
+    timers.push(setTimeout(() => {
+      if (!pp.el) return;
+      pp.el.classList.remove('skel');
+      pp.el.textContent = pp.txt;
+      pulse(pp.el);
+    }, 600 + i * 450));
+  });
 
-      posts.forEach((p, i)=>{
-        timers.push(setTimeout(()=>{
-          if(!p.el) return;
-          p.el.classList.remove('skel');
-          p.el.textContent = p.txt;
-          pulse(p.el);
-        }, 400 + i * 450));
-      });
+}, 5200)); // ✅ fermeture correcte du setTimeout ici
 
+// Terminé
+timers.push(setTimeout(() => {
+  fill.style.width = '100%';
+  status.className = 'gmbBadge good';
+  status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
+  step.textContent = 'Terminé : plus de visibilité, plus de clics, plus de clients.';
+  pulse(status); pulse(step);
+}, 8200));
 
-    timers.push(setTimeout(()=>{
-      fill.style.width = '100%';
-      status.className = 'gmbBadge good';
-      status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
-      step.textContent = 'Terminé : plus de visibilité, plus de clics, plus de clients.';
-      pulse(status); pulse(step);
-    }, 8200));
-  }
 
   const replay = document.getElementById('gmbReplay');
   if(replay) replay.addEventListener('click', run);
