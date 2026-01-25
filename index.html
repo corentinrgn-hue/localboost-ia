@@ -1904,12 +1904,13 @@ header a:hover, nav a:hover{
 
 <script>
 (function(){
+  // ======= Elements
   const rating = document.getElementById('ratingNum');
   const reviews = document.getElementById('reviewsNum');
   const fill = document.getElementById('fill');
   const step = document.getElementById('stepText');
   const status = document.getElementById('gmbStatus');
-  const stars = document.querySelectorAll('.gmbStar');
+  const stars = Array.from(document.querySelectorAll('.gmbStar'));
 
   const chipCall = document.getElementById('chipCall');
   const chipRoute = document.getElementById('chipRoute');
@@ -1929,18 +1930,22 @@ header a:hover, nav a:hover{
   const svc4 = document.getElementById('svc4');
 
   const descText = document.getElementById('descText');
-
   const post1 = document.getElementById('post1');
   const post2 = document.getElementById('post2');
-
 
   const map = document.querySelector('.gmbMap');
   const mapFrame = document.getElementById('gmbMapFrame');
 
-  let timers = [];
+  const replay = document.getElementById('gmbReplay');
 
-  function clearTimers(){ timers.forEach(t=>clearTimeout(t)); timers=[]; }
-  function setStars(n){ stars.forEach((s,i)=>s.classList.toggle('on', i<n)); }
+  // ======= Timers
+  let timers = [];
+  function clearTimers(){ timers.forEach(t => clearTimeout(t)); timers = []; }
+
+  function setStars(n){
+    stars.forEach((s, i) => s.classList.toggle('on', i < n));
+  }
+
   function pulse(el){
     if(!el) return;
     el.classList.remove('gmbPulse');
@@ -1956,12 +1961,16 @@ header a:hover, nav a:hover{
   function reset(){
     clearTimers();
 
-    rating.textContent = '3,2';
-    reviews.textContent = '2 avis';
-    fill.style.width = '0%';
-    step.textContent = 'Étape 1/4 : analyse de la fiche…';
-    status.className = 'gmbBadge';
-    status.innerHTML = '<span class="dot"></span> Analyse IA…';
+    if(rating) rating.textContent = '3,2';
+    if(reviews) reviews.textContent = '2 avis';
+    if(fill) fill.style.width = '0%';
+    if(step) step.textContent = 'Étape 1/4 : analyse de la fiche…';
+
+    if(status){
+      status.className = 'gmbBadge';
+      status.innerHTML = '<span class="dot"></span> Analyse IA…';
+    }
+
     setStars(3);
 
     [chipCall, chipRoute, chipPhotos].forEach(c => c && c.classList.remove('primary'));
@@ -1973,14 +1982,12 @@ header a:hover, nav a:hover{
       p.style.backgroundImage = '';
     });
 
-    // ✅ reset map (EN DEHORS de la boucle photos)
     if(map) map.classList.remove('zooming');
     setMapZoom(14);
 
     [optServices,optDesc,optPosts].forEach(c => c && c.classList.remove('active'));
 
-    const tags = [svc1,svc2,svc3,svc4];
-    tags.forEach(t=>{
+    [svc1,svc2,svc3,svc4].forEach(t=>{
       if(!t) return;
       t.classList.add('skel');
       t.textContent = '';
@@ -1996,31 +2003,30 @@ header a:hover, nav a:hover{
       p.classList.add('skel');
       p.textContent = '';
     });
-
-    
   }
 
   function run(){
     reset();
 
-    // ✅ zoom visuel plus fort + plus long
+    // Zoom map
     if(map){
       map.classList.add('zooming');
-      setTimeout(() => map.classList.remove('zooming'), 2200);
+      timers.push(setTimeout(() => map.classList.remove('zooming'), 2200));
     }
-
-    // ✅ zoom “réel” (reload iframe)
     setMapZoom(17);
 
-    timers.push(setTimeout(()=>{
-      fill.style.width = '28%';
-      step.textContent = 'Étape 2/4 : infos & catégories optimisées';
-      status.classList.add('warn');
-      status.innerHTML = '<span class="dot"></span> Optimisation…';
+    // Étape 2
+    timers.push(setTimeout(() => {
+      if(fill) fill.style.width = '28%';
+      if(step) step.textContent = 'Étape 2/4 : infos & catégories optimisées';
+      if(status){
+        status.classList.add('warn');
+        status.innerHTML = '<span class="dot"></span> Optimisation…';
+      }
       if(chipRoute) chipRoute.classList.add('primary');
       pulse(fill); pulse(status);
-    }, 1200));
-          if(optServices) optServices.classList.add('active');
+
+      if(optServices) optServices.classList.add('active');
 
       const services = [
         {el: svc1, txt: "Sur place"},
@@ -2029,26 +2035,28 @@ header a:hover, nav a:hover{
         {el: svc4, txt: "Menu du jour"}
       ];
 
-      services.forEach((s, i)=>{
-        timers.push(setTimeout(()=>{
+      services.forEach((s, i) => {
+        timers.push(setTimeout(() => {
           if(!s.el) return;
           s.el.classList.remove('skel');
           s.el.textContent = s.txt;
           pulse(s.el);
-        }, i * 350));
+        }, 250 + i * 350));
       });
 
+    }, 1200));
 
-    timers.push(setTimeout(()=>{
-      fill.style.width = '60%';
-      step.textContent = 'Étape 3/4 : avis & confiance (objectif 25+)';
-      rating.textContent = '4,8';
-      reviews.textContent = '25 avis';
+    // Étape 3
+    timers.push(setTimeout(() => {
+      if(fill) fill.style.width = '60%';
+      if(step) step.textContent = 'Étape 3/4 : avis & confiance (objectif 25+)';
+      if(rating) rating.textContent = '4,8';
+      if(reviews) reviews.textContent = '25 avis';
       setStars(5);
       if(chipCall) chipCall.classList.add('primary');
       pulse(rating); pulse(reviews);
-    }, 3200));
-          if(optDesc) optDesc.classList.add('active');
+
+      if(optDesc) optDesc.classList.add('active');
 
       if(descText){
         descText.classList.remove('skel');
@@ -2057,67 +2065,64 @@ header a:hover, nav a:hover{
         pulse(descText);
       }
 
+    }, 3200));
 
-// Étape 4 — photos + posts
-timers.push(setTimeout(() => {
-  fill.style.width = '85%';
-  step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
-  if (chipPhotos) chipPhotos.classList.add('primary');
-
-  // Photos réelles du restaurant
-  const photos = [
-    { el: p1, src: "assets/resto-1.png" },
-    { el: p2, src: "assets/resto-2.png" },
-    { el: p3, src: "assets/resto-3.png" }
-  ];
-
-  photos.forEach((ph, i) => {
-    if (!ph.el) return;
+    // Étape 4
     timers.push(setTimeout(() => {
-      ph.el.classList.remove('gmbSkel');
-      ph.el.style.backgroundImage = `url('${ph.src}')`;
-      ph.el.classList.add('reveal');
-      pulse(ph.el);
-    }, i * 700));
-  });
+      if(fill) fill.style.width = '85%';
+      if(step) step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
+      if(chipPhotos) chipPhotos.classList.add('primary');
 
-  // Posts
-  if (optPosts) optPosts.classList.add('active');
+      const photos = [
+        { el: p1, src: "assets/resto-1.png" },
+        { el: p2, src: "assets/resto-2.png" },
+        { el: p3, src: "assets/resto-3.png" }
+      ];
 
-  const posts = [
-    { el: post1, txt: "🍽️ Menu du jour — Réservez" },
-    { el: post2, txt: "⭐ Nouveaux avis — Merci !" }
-  ];
+      photos.forEach((ph, i) => {
+        if(!ph.el) return;
+        timers.push(setTimeout(() => {
+          ph.el.classList.remove('gmbSkel');
+          ph.el.style.backgroundImage = `url('${ph.src}')`;
+          ph.el.classList.add('reveal');
+          pulse(ph.el);
+        }, i * 700));
+      });
 
-  posts.forEach((pp, i) => {
+      if(optPosts) optPosts.classList.add('active');
+
+      const posts = [
+        {el: post1, txt: "🍽️ Menu du jour — Réservez"},
+        {el: post2, txt: "⭐ Nouveaux avis — Merci !"}
+      ];
+
+      posts.forEach((pp, i) => {
+        timers.push(setTimeout(() => {
+          if(!pp.el) return;
+          pp.el.classList.remove('skel');
+          pp.el.textContent = pp.txt;
+          pulse(pp.el);
+        }, 600 + i * 450));
+      });
+
+    }, 5200));
+
+    // Terminé
     timers.push(setTimeout(() => {
-      if (!pp.el) return;
-      pp.el.classList.remove('skel');
-      pp.el.textContent = pp.txt;
-      pulse(pp.el);
-    }, 600 + i * 450));
-  });
+      if(fill) fill.style.width = '100%';
+      if(status){
+        status.className = 'gmbBadge good';
+        status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
+      }
+      if(step) step.textContent = 'Terminé : plus de visibilité, plus de clics, plus de clients.';
+      pulse(status); pulse(step);
+    }, 8200));
+  }
 
-}, 5200)); // ✅ fermeture correcte du setTimeout ici
-
-// Terminé
-timers.push(setTimeout(() => {
-  fill.style.width = '100%';
-  status.className = 'gmbBadge good';
-  status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
-  step.textContent = 'Terminé : plus de visibilité, plus de clics, plus de clients.';
-  pulse(status); pulse(step);
-}, 8200));
-
-
-  const replay = document.getElementById('gmbReplay');
   if(replay) replay.addEventListener('click', run);
   run();
 })();
 </script>
-
-
-
   
 </body>
 </html>
