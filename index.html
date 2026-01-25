@@ -264,9 +264,36 @@ body{
     .formRow{display:grid; grid-template-columns: 1fr 1fr; gap: 10px}
     .hint{margin-top:10px; font-size: 13px; color: var(--muted)}
 
-    /* Footer */
-    footer{padding: 28px 0 46px; border-top:1px solid var(--border); color: var(--muted)}
-    .foot{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center}
+/* Footer — fond noir */
+footer{
+  padding: 28px 0 46px;
+  background: #000000;                     /* ⬅️ NOIR */
+  color: #ffffff;                          /* texte blanc */
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+/* Texte secondaire dans le footer */
+footer .muted{
+  color: rgba(255,255,255,.65);
+}
+
+/* Liens et boutons du footer */
+footer a{
+  color: #ffffff;
+}
+
+footer a:hover{
+  opacity: .85;
+}
+
+.foot{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
 
     /* New: Feature cards / grids */
     .featureGrid{
