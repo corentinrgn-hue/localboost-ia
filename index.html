@@ -1545,14 +1545,35 @@ header a:hover, nav a:hover{
 
   /* Photos: état “révélé” + animation visuelle */
 .gmbPhoto{
+  height:68px;                 /* garde ta hauteur */
+  border-radius:14px;
+  position:relative;
+
+  /* ✅ Ajoute ça */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
   opacity: .55;
+  background-color: rgba(15,23,42,.06); /* ok en fallback */
 }
+
 .gmbPhoto.reveal{
   opacity: 1;
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(15,23,42,.10);
 }
+
+.gmbPhoto{
+  opacity: 1;
+  filter: saturate(.9) contrast(.95) brightness(.95);
+}
+.gmbPhoto.reveal{
+  filter: none;
+}
+
+  
 .gmbPhoto::after{
   content:"";
   position:absolute;
@@ -2041,22 +2062,23 @@ header a:hover, nav a:hover{
       step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
       if(chipPhotos) chipPhotos.classList.add('primary');
 
-      const photos = [
-        {el:p1, bg:'linear-gradient(135deg, rgba(37,99,235,.22), rgba(52,211,153,.16))'},
-        {el:p2, bg:'linear-gradient(135deg, rgba(251,191,36,.20), rgba(37,99,235,.14))'},
-        {el:p3, bg:'linear-gradient(135deg, rgba(167,139,250,.18), rgba(15,23,42,.06))'}
-      ];
+     // Étape 4 — Photos réelles du restaurant
+const photos = [
+  { el: p1, src: "assets/resto-1.jpg" }, // façade / entrée
+  { el: p2, src: "assets/resto-2.jpg" }, // plat signature
+  { el: p3, src: "assets/resto-3.jpg" }  // salle / ambiance
+];
 
-      photos.forEach((ph, i)=>{
-        if(!ph.el) return;
-        timers.push(setTimeout(()=>{
-          ph.el.classList.remove('gmbSkel');
-          ph.el.style.backgroundImage = ph.bg;
-          ph.el.classList.add('reveal');
-          pulse(ph.el);
-        }, i * 550));
-      });
-    }, 5200));
+photos.forEach((ph, i) => {
+  if (!ph.el) return;
+  timers.push(setTimeout(() => {
+    ph.el.classList.remove('gmbSkel');
+    ph.el.style.backgroundImage = `url('${ph.src}')`;
+    ph.el.classList.add('reveal');
+    pulse(ph.el);
+  }, i * 700)); // ⬅️ apparition progressive
+});
+
 
           if(optPosts) optPosts.classList.add('active');
 
