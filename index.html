@@ -1112,106 +1112,103 @@ header a:hover, nav a:hover{
       <button class="btn small" id="gmbReplay">Rejouer l’optimisation</button>
     </div>
 
-    <div class="gmbCard">
-      <div class="gmbTop">
-        <div class="gmbBadge" id="gmbStatus">
-          <span class="dot"></span> Analyse IA…
-        </div>
-        <div class="gmbBrand">
-          <div class="gmbLogo">G</div>
-          <div class="gmbSearch">Google Maps</div>
-        </div>
-      </div>
+ <div class="gmbCard">
+  <div class="gmbTop">
+    <div class="gmbBadge" id="gmbStatus">
+      <span class="dot"></span> Analyse IA…
+    </div>
+    <div class="gmbBrand">
+      <div class="gmbLogo">G</div>
+      <div class="gmbSearch">Google Maps</div>
+    </div>
+  </div>
 
-      <div class="gmbMap">
-  <iframe
-    id="gmbMapFrame"
-    class="gmbMapFrame"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps?q=Le%20Coup%20De%20Bol%20La%20Possession&z=14&output=embed">
-  </iframe>
+  <div class="gmbMap">
+    <iframe
+      id="gmbMapFrame"
+      class="gmbMapFrame"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Le%20Coup%20De%20Bol%20La%20Possession&z=14&output=embed">
+    </iframe>
+    <div class="pin"></div>
+  </div>
 
-  <div class="pin"></div>
-</div>
-
+  <!-- ✅ IMPORTANT : le padding vient de gmbBody -->
+  <div class="gmbBody">
 
     <div class="gmbTitleRow">
-  <div class="gmbTitleBlock">
-    <h3 class="gmbTitle">Le Chalet des Cimes</h3>
-    <div class="gmbSubCats">
-      Restaurant de montagne · Restaurant français · Brasserie alpine
-    </div>
-  </div>
-  <span class="gmbCat">Restaurant savoyard</span>
-</div>
-
-
-        <div class="gmbRatingRow">
-          <div class="gmbStars">
-            <span class="gmbStar">★</span>
-            <span class="gmbStar">★</span>
-            <span class="gmbStar">★</span>
-            <span class="gmbStar">★</span>
-            <span class="gmbStar">★</span>
-          </div>
-          <div class="gmbRatingText">
-            <span id="ratingNum">3,2</span>
-            <span class="sep">•</span>
-            <span id="reviewsNum">2 avis</span>
-          </div>
+      <div class="gmbTitleBlock">
+        <h3 class="gmbTitle">Le Chalet des Cimes</h3>
+        <div class="gmbSubCats">
+          Restaurant de montagne · Restaurant français · Brasserie alpine
         </div>
+      </div>
+      <span class="gmbCat">Restaurant savoyard</span>
+    </div>
 
-        <div class="gmbActions">
-          <button class="gmbChip" id="chipCall">Appeler</button>
-          <button class="gmbChip" id="chipRoute">Itinéraire</button>
-          <button class="gmbChip" id="chipPhotos">Photos</button>
+    <div class="gmbRatingRow">
+      <div class="gmbStars">
+        <span class="gmbStar">★</span>
+        <span class="gmbStar">★</span>
+        <span class="gmbStar">★</span>
+        <span class="gmbStar">★</span>
+        <span class="gmbStar">★</span>
+      </div>
+      <div class="gmbRatingText">
+        <span id="ratingNum">3,2</span>
+        <span class="sep">•</span>
+        <span id="reviewsNum">2 avis</span>
+      </div>
+    </div>
+
+    <div class="gmbActions">
+      <button class="gmbChip" id="chipCall">Appeler</button>
+      <button class="gmbChip" id="chipRoute">Itinéraire</button>
+      <button class="gmbChip" id="chipPhotos">Photos</button>
+    </div>
+
+    <div class="gmbOptimize">
+      <div class="gmbOptCard" id="optServices">
+        <div class="gmbOptTitle">Services</div>
+        <div class="gmbOptBody">
+          <span class="gmbTag skel" id="svc1"></span>
+          <span class="gmbTag skel" id="svc2"></span>
+          <span class="gmbTag skel" id="svc3"></span>
+          <span class="gmbTag skel" id="svc4"></span>
         </div>
+      </div>
 
-        <!-- Zones d’optimisation visibles -->
-<div class="gmbOptimize">
+      <div class="gmbOptCard" id="optDesc">
+        <div class="gmbOptTitle">Description</div>
+        <div class="gmbOptBody">
+          <p class="gmbDesc skel" id="descText"></p>
+        </div>
+      </div>
 
-  <div class="gmbOptCard" id="optServices">
-    <div class="gmbOptTitle">Services</div>
-    <div class="gmbOptBody">
-      <span class="gmbTag skel" id="svc1"></span>
-      <span class="gmbTag skel" id="svc2"></span>
-      <span class="gmbTag skel" id="svc3"></span>
-      <span class="gmbTag skel" id="svc4"></span>
-    </div>
-  </div>
-
-  <div class="gmbOptCard" id="optDesc">
-    <div class="gmbOptTitle">Description</div>
-    <div class="gmbOptBody">
-      <p class="gmbDesc skel" id="descText"></p>
-    </div>
-  </div>
-
-  <div class="gmbOptCard" id="optPosts">
-    <div class="gmbOptTitle">Posts Google</div>
-    <div class="gmbOptBody gmbPosts">
-      <div class="gmbPost skel" id="post1"></div>
-      <div class="gmbPost skel" id="post2"></div>
-    </div>
-  </div>
-
-</div>
-
-
-      <div class="gmbPhotos">
-  <div class="gmbPhoto gmbSkel" id="p1"></div>
-  <div class="gmbPhoto gmbSkel" id="p2"></div>
-  <div class="gmbPhoto gmbSkel" id="p3"></div>
-</div>
-
-
-        <div class="gmbProgress">
-          <div class="gmbBar"><div class="gmbFill" id="fill"></div></div>
-          <div class="gmbStep" id="stepText">Analyse de la fiche…</div>
+      <div class="gmbOptCard" id="optPosts">
+        <div class="gmbOptTitle">Posts Google</div>
+        <div class="gmbOptBody gmbPosts">
+          <div class="gmbPost skel" id="post1"></div>
+          <div class="gmbPost skel" id="post2"></div>
         </div>
       </div>
     </div>
+
+    <div class="gmbPhotos">
+      <div class="gmbPhoto gmbSkel" id="p1"></div>
+      <div class="gmbPhoto gmbSkel" id="p2"></div>
+      <div class="gmbPhoto gmbSkel" id="p3"></div>
+    </div>
+
+    <div class="gmbProgress">
+      <div class="gmbBar"><div class="gmbFill" id="fill"></div></div>
+      <div class="gmbStep" id="stepText">Analyse de la fiche…</div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </section>
 
