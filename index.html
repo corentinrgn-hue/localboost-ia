@@ -1550,19 +1550,13 @@ header a:hover, nav a:hover{
 
   /* Photos: état “révélé” + animation visuelle */
 .gmbPhoto{
-  height:68px;                 /* garde ta hauteur */
+  height: 120px;            /* ⬅️ augmente la hauteur */
   border-radius:14px;
-  position:relative;
-
-  /* ✅ Ajoute ça */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
-  opacity: .55;
-  background-color: rgba(15,23,42,.06); /* ok en fallback */
 }
+
 
 .gmbPhoto.reveal{
   opacity: 1;
