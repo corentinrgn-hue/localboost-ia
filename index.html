@@ -1163,6 +1163,37 @@ header a:hover, nav a:hover{
           <button class="gmbChip" id="chipPhotos">Photos</button>
         </div>
 
+        <!-- Zones d’optimisation visibles -->
+<div class="gmbOptimize">
+
+  <div class="gmbOptCard" id="optServices">
+    <div class="gmbOptTitle">Services</div>
+    <div class="gmbOptBody">
+      <span class="gmbTag skel" id="svc1"></span>
+      <span class="gmbTag skel" id="svc2"></span>
+      <span class="gmbTag skel" id="svc3"></span>
+      <span class="gmbTag skel" id="svc4"></span>
+    </div>
+  </div>
+
+  <div class="gmbOptCard" id="optDesc">
+    <div class="gmbOptTitle">Description</div>
+    <div class="gmbOptBody">
+      <p class="gmbDesc skel" id="descText"></p>
+    </div>
+  </div>
+
+  <div class="gmbOptCard" id="optPosts">
+    <div class="gmbOptTitle">Posts Google</div>
+    <div class="gmbOptBody gmbPosts">
+      <div class="gmbPost skel" id="post1"></div>
+      <div class="gmbPost skel" id="post2"></div>
+    </div>
+  </div>
+
+</div>
+
+
       <div class="gmbPhotos">
   <div class="gmbPhoto gmbSkel" id="p1"></div>
   <div class="gmbPhoto gmbSkel" id="p2"></div>
@@ -1573,6 +1604,79 @@ header a:hover, nav a:hover{
   transform: scale(1.22);
 }
 
+  /* =========================
+   Optimisation visible (3 cartes)
+   ========================= */
+.gmbOptimize{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-top:12px;
+}
+
+.gmbOptCard{
+  border:1px solid var(--border);
+  background: rgba(37,99,235,.06);
+  border-radius: 16px;
+  padding:12px;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.gmbOptCard.active{
+  background: rgba(37,99,235,.10);
+  box-shadow: 0 10px 22px rgba(15,23,42,.10);
+  transform: translateY(-2px);
+}
+
+.gmbOptTitle{
+  font-size:12px;
+  font-weight:900;
+  color: rgba(30,64,175,.95);
+  margin-bottom:8px;
+  letter-spacing:.2px;
+}
+
+.gmbOptBody{display:flex;flex-wrap:wrap;gap:8px}
+
+.gmbTag{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  border:1px solid rgba(37,99,235,.18);
+  background: rgba(255,255,255,.7);
+}
+
+.gmbDesc{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.4;
+  color: rgba(15,23,42,.85);
+  min-height: 58px;
+}
+
+.gmbPosts{display:grid;gap:8px;width:100%}
+.gmbPost{
+  height:34px;
+  border-radius:12px;
+  border:1px solid rgba(37,99,235,.14);
+  background: rgba(255,255,255,.7);
+}
+
+/* Skeleton réutilisable */
+.skel{
+  position:relative;
+  overflow:hidden;
+  color:transparent;
+}
+.skel:before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(15,23,42,.04), rgba(15,23,42,.10), rgba(15,23,42,.04));
+  animation:gmbShimmer 1.2s infinite;
+}
+
   
 </style>
 
@@ -1793,6 +1897,21 @@ header a:hover, nav a:hover{
   const p2 = document.getElementById('p2');
   const p3 = document.getElementById('p3');
 
+  const optServices = document.getElementById('optServices');
+  const optDesc = document.getElementById('optDesc');
+  const optPosts = document.getElementById('optPosts');
+
+  const svc1 = document.getElementById('svc1');
+  const svc2 = document.getElementById('svc2');
+  const svc3 = document.getElementById('svc3');
+  const svc4 = document.getElementById('svc4');
+
+  const descText = document.getElementById('descText');
+
+  const post1 = document.getElementById('post1');
+  const post2 = document.getElementById('post2');
+
+
   const map = document.querySelector('.gmbMap');
   const mapFrame = document.getElementById('gmbMapFrame');
 
@@ -1835,6 +1954,28 @@ header a:hover, nav a:hover{
     // ✅ reset map (EN DEHORS de la boucle photos)
     if(map) map.classList.remove('zooming');
     setMapZoom(14);
+
+    [optServices,optDesc,optPosts].forEach(c => c && c.classList.remove('active'));
+
+    const tags = [svc1,svc2,svc3,svc4];
+    tags.forEach(t=>{
+      if(!t) return;
+      t.classList.add('skel');
+      t.textContent = '';
+    });
+
+    if(descText){
+      descText.classList.add('skel');
+      descText.textContent = '';
+    }
+
+    [post1,post2].forEach(p=>{
+      if(!p) return;
+      p.classList.add('skel');
+      p.textContent = '';
+    });
+
+    
   }
 
   function run(){
@@ -1857,6 +1998,24 @@ header a:hover, nav a:hover{
       if(chipRoute) chipRoute.classList.add('primary');
       pulse(fill); pulse(status);
     }, 1200));
+          if(optServices) optServices.classList.add('active');
+
+      const services = [
+        {el: svc1, txt: "Sur place"},
+        {el: svc2, txt: "À emporter"},
+        {el: svc3, txt: "Réservation"},
+        {el: svc4, txt: "Menu du jour"}
+      ];
+
+      services.forEach((s, i)=>{
+        timers.push(setTimeout(()=>{
+          if(!s.el) return;
+          s.el.classList.remove('skel');
+          s.el.textContent = s.txt;
+          pulse(s.el);
+        }, i * 350));
+      });
+
 
     timers.push(setTimeout(()=>{
       fill.style.width = '60%';
@@ -1867,6 +2026,15 @@ header a:hover, nav a:hover{
       if(chipCall) chipCall.classList.add('primary');
       pulse(rating); pulse(reviews);
     }, 3200));
+          if(optDesc) optDesc.classList.add('active');
+
+      if(descText){
+        descText.classList.remove('skel');
+        descText.textContent =
+          "Cuisine locale maison, produits frais. Service rapide le midi, ambiance conviviale. Réservez en ligne ou appelez pour emporter.";
+        pulse(descText);
+      }
+
 
     timers.push(setTimeout(()=>{
       fill.style.width = '85%';
@@ -1889,6 +2057,23 @@ header a:hover, nav a:hover{
         }, i * 550));
       });
     }, 5200));
+
+          if(optPosts) optPosts.classList.add('active');
+
+      const posts = [
+        {el: post1, txt: "🍽️ Menu du jour — Réservez"},
+        {el: post2, txt: "⭐ Nouveaux avis — Merci !"}
+      ];
+
+      posts.forEach((p, i)=>{
+        timers.push(setTimeout(()=>{
+          if(!p.el) return;
+          p.el.classList.remove('skel');
+          p.el.textContent = p.txt;
+          pulse(p.el);
+        }, 400 + i * 450));
+      });
+
 
     timers.push(setTimeout(()=>{
       fill.style.width = '100%';
