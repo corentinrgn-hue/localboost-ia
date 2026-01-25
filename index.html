@@ -1560,6 +1560,19 @@ header a:hover, nav a:hover{
   transform: scale(1.12);
 }
 
+.gmbMap{overflow:hidden}
+.gmbMapFrame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  transform: scale(1.02);
+  transition: transform 2.2s ease;
+}
+.gmbMap.zooming .gmbMapFrame{
+  transform: scale(1.22);
+}
+
   
 </style>
 
@@ -1780,6 +1793,9 @@ header a:hover, nav a:hover{
   const p2 = document.getElementById('p2');
   const p3 = document.getElementById('p3');
 
+  const map = document.querySelector('.gmbMap');
+  const mapFrame = document.getElementById('gmbMapFrame');
+
   let timers = [];
 
   function clearTimers(){ timers.forEach(t=>clearTimeout(t)); timers=[]; }
@@ -1787,8 +1803,13 @@ header a:hover, nav a:hover{
   function pulse(el){
     if(!el) return;
     el.classList.remove('gmbPulse');
-    void el.offsetWidth; // reflow
+    void el.offsetWidth;
     el.classList.add('gmbPulse');
+  }
+
+  function setMapZoom(z){
+    if(!mapFrame) return;
+    mapFrame.src = `https://www.google.com/maps?q=Le%20Coup%20De%20Bol%20La%20Possession&z=${z}&output=embed`;
   }
 
   function reset(){
@@ -1802,47 +1823,32 @@ header a:hover, nav a:hover{
     status.innerHTML = '<span class="dot"></span> Analyse IA…';
     setStars(3);
 
-    [chipCall, chipRoute, chipPhotos].forEach(c=>c && c.classList.remove('primary'));
+    [chipCall, chipRoute, chipPhotos].forEach(c => c && c.classList.remove('primary'));
 
     [p1,p2,p3].forEach(p=>{
       if(!p) return;
       p.classList.add('gmbSkel');
       p.classList.remove('reveal');
       p.style.backgroundImage = '';
-
-  const map = document.querySelector('.gmbMap');
-  const mapFrame = document.getElementById('gmbMapFrame');
-
-  if(map) map.classList.remove('zooming');
-
-  if(mapFrame){
-    mapFrame.src =
-      "https://www.google.com/maps?q=Le%20Coup%20De%20Bol%20La%20Possession&z=14&output=embed";
-  }
-      
     });
+
+    // ✅ reset map (EN DEHORS de la boucle photos)
+    if(map) map.classList.remove('zooming');
+    setMapZoom(14);
   }
 
   function run(){
     reset();
 
-  const map = document.querySelector('.gmbMap');
-  const mapFrame = document.getElementById('gmbMapFrame');
+    // ✅ zoom visuel plus fort + plus long
+    if(map){
+      map.classList.add('zooming');
+      setTimeout(() => map.classList.remove('zooming'), 2200);
+    }
 
-  // Zoom visuel (CSS)
-  if(map){
-    map.classList.add('zooming');
-    setTimeout(() => map.classList.remove('zooming'), 1400);
-  }
+    // ✅ zoom “réel” (reload iframe)
+    setMapZoom(17);
 
-  // Zoom réel (Google Maps)
-  if(mapFrame){
-    mapFrame.src =
-      "https://www.google.com/maps?q=Le%20Coup%20De%20Bol%20La%20Possession&z=17&output=embed";
-  }
-
-    
-    // 0.8s — étape 2: infos & catégories
     timers.push(setTimeout(()=>{
       fill.style.width = '28%';
       step.textContent = 'Étape 2/4 : infos & catégories optimisées';
@@ -1850,9 +1856,8 @@ header a:hover, nav a:hover{
       status.innerHTML = '<span class="dot"></span> Optimisation…';
       if(chipRoute) chipRoute.classList.add('primary');
       pulse(fill); pulse(status);
-    }, 800));
+    }, 1200));
 
-    // 2.6s — étape 3: avis & note
     timers.push(setTimeout(()=>{
       fill.style.width = '60%';
       step.textContent = 'Étape 3/4 : avis & confiance (objectif 25+)';
@@ -1861,15 +1866,13 @@ header a:hover, nav a:hover{
       setStars(5);
       if(chipCall) chipCall.classList.add('primary');
       pulse(rating); pulse(reviews);
-    }, 2600));
+    }, 3200));
 
-    // 4.6s — étape 4: photos
     timers.push(setTimeout(()=>{
       fill.style.width = '85%';
       step.textContent = 'Étape 4/4 : photos & contenus (posts Google)';
       if(chipPhotos) chipPhotos.classList.add('primary');
 
-      // “Photos” stylisées (dégradés) + reveal progressif
       const photos = [
         {el:p1, bg:'linear-gradient(135deg, rgba(37,99,235,.22), rgba(52,211,153,.16))'},
         {el:p2, bg:'linear-gradient(135deg, rgba(251,191,36,.20), rgba(37,99,235,.14))'},
@@ -1883,28 +1886,25 @@ header a:hover, nav a:hover{
           ph.el.style.backgroundImage = ph.bg;
           ph.el.classList.add('reveal');
           pulse(ph.el);
-        }, i * 450));
+        }, i * 550));
       });
-    }, 4600));
+    }, 5200));
 
-    // 7.2s — terminé
     timers.push(setTimeout(()=>{
       fill.style.width = '100%';
       status.className = 'gmbBadge good';
       status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
       step.textContent = 'Terminé : plus de visibilité, plus de clics, plus de clients.';
       pulse(status); pulse(step);
-    }, 7200));
+    }, 8200));
   }
 
   const replay = document.getElementById('gmbReplay');
   if(replay) replay.addEventListener('click', run);
   run();
-
-
-  
 })();
 </script>
+
 
 
   
