@@ -1099,6 +1099,76 @@ header a:hover, nav a:hover{
     </section>
 <!-- ✅ AJOUTER CETTE SECTION ENTRE </section id="methode"> ET <section id="faq"> -->
 
+
+<section class="gmbDemo">
+  <div class="gmbDemoWrap">
+    <div class="sectionHead">
+      <div>
+        <h2>Optimisation en direct</h2>
+        <p class="gmbSub">
+          Visualisez en quelques secondes l’impact d’une fiche restaurant optimisée.
+        </p>
+      </div>
+      <button class="btn small" id="gmbReplay">Rejouer l’optimisation</button>
+    </div>
+
+    <div class="gmbCard">
+      <div class="gmbTop">
+        <div class="gmbBadge" id="gmbStatus">
+          <span class="dot"></span> Analyse IA…
+        </div>
+        <div class="gmbBrand">
+          <div class="gmbLogo">G</div>
+          <div class="gmbSearch">Google Maps</div>
+        </div>
+      </div>
+
+      <div class="gmbMap"><div class="pin"></div></div>
+
+      <div class="gmbBody">
+        <div class="gmbTitleRow">
+          <h3 class="gmbTitle">Restaurant Local</h3>
+          <span class="gmbCat">Restaurant • La Possession</span>
+        </div>
+
+        <div class="gmbRatingRow">
+          <div class="gmbStars">
+            <span class="gmbStar">★</span>
+            <span class="gmbStar">★</span>
+            <span class="gmbStar">★</span>
+            <span class="gmbStar">★</span>
+            <span class="gmbStar">★</span>
+          </div>
+          <div class="gmbRatingText">
+            <span id="ratingNum">3,2</span>
+            <span class="sep">•</span>
+            <span id="reviewsNum">2 avis</span>
+          </div>
+        </div>
+
+        <div class="gmbActions">
+          <button class="gmbChip" id="chipCall">Appeler</button>
+          <button class="gmbChip" id="chipRoute">Itinéraire</button>
+          <button class="gmbChip" id="chipPhotos">Photos</button>
+        </div>
+
+        <div class="gmbPhotos">
+          <div class="gmbPhoto gmbSkel"></div>
+          <div class="gmbPhoto gmbSkel"></div>
+          <div class="gmbPhoto gmbSkel"></div>
+        </div>
+
+        <div class="gmbProgress">
+          <div class="gmbBar"><div class="gmbFill" id="fill"></div></div>
+          <div class="gmbStep" id="stepText">Analyse de la fiche…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
 <section id="temoignages">
   <div class="wrap">
     <div class="sectionHead">
@@ -1308,6 +1378,128 @@ header a:hover, nav a:hover{
   }
 }
 
+  /* =========================
+   GMB DEMO — LocalBoost IA
+   ========================= */
+.gmbDemo{padding:34px 0}
+.gmbDemoWrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+.gmbHeader{
+  display:flex; gap:16px; align-items:flex-end; justify-content:space-between;
+  flex-wrap:wrap; margin-bottom:14px
+}
+.gmbHeader h2{margin:0; font-size:26px}
+.gmbSub{margin:6px 0 0; color:var(--muted); max-width:70ch}
+
+.gmbCard{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius2);
+  box-shadow: 0 8px 24px rgba(15,23,42,.06);
+  overflow:hidden;
+}
+
+.gmbTop{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;border-bottom:1px solid var(--border)
+}
+
+.gmbBadge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;
+  padding:7px 10px;border-radius:999px;
+  background: rgba(15,23,42,.06);
+  border:1px solid rgba(15,23,42,.08);
+}
+.gmbBadge .dot{width:8px;height:8px;border-radius:50%;background:rgba(15,23,42,.35)}
+.gmbBadge.good{
+  background: rgba(52,211,153,.14);
+  border-color: rgba(52,211,153,.25);
+}
+.gmbBadge.good .dot{background: var(--ok)}
+.gmbBadge.warn{
+  background: rgba(251,191,36,.16);
+  border-color: rgba(251,191,36,.28);
+}
+.gmbBadge.warn .dot{background: var(--warn)}
+
+.gmbBrand{display:flex;align-items:center;gap:8px}
+.gmbLogo{
+  width:28px;height:28px;border-radius:10px;
+  display:grid;place-items:center;font-weight:900;
+  background: rgba(37,99,235,.12);
+  border:1px solid rgba(37,99,235,.16);
+  color: var(--accent);
+}
+.gmbSearch{font-size:13px;color:var(--muted);font-weight:700}
+
+.gmbMap{
+  height:180px; position:relative;
+  background:
+    radial-gradient(circle at 70% 35%, rgba(37,99,235,.18), transparent 45%),
+    radial-gradient(circle at 40% 70%, rgba(52,211,153,.14), transparent 48%),
+    linear-gradient(135deg, rgba(15,23,42,.04), rgba(15,23,42,.02));
+}
+.gmbMap .pin{
+  position:absolute;left:52%;top:46%;
+  width:18px;height:18px;border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:#e11d48;
+  box-shadow:0 10px 22px rgba(225,29,72,.25);
+}
+.gmbMap .pin:after{
+  content:"";position:absolute;left:5px;top:5px;width:8px;height:8px;border-radius:50%;
+  background:#fff;transform:rotate(45deg)
+}
+
+.gmbBody{padding:16px}
+.gmbTitleRow{display:flex;gap:10px;align-items:baseline;justify-content:space-between}
+.gmbTitle{margin:0;font-size:20px}
+.gmbCat{font-size:12px;color:var(--muted);font-weight:700}
+
+.gmbRatingRow{display:flex;align-items:center;gap:12px;margin-top:8px}
+.gmbStars{display:flex;gap:2px;font-size:18px}
+.gmbStar{opacity:.18}
+.gmbStar.on{opacity:1}
+
+.gmbRatingText{font-size:13px;font-weight:700}
+.gmbRatingText .sep{margin:0 6px;opacity:.55}
+
+.gmbMeta{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+
+.gmbActions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 10px}
+.gmbChip{
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius:999px;
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:800;
+}
+.gmbChip.primary{
+  border-color: rgba(37,99,235,.28);
+  background: rgba(37,99,235,.10);
+}
+
+.gmbPhotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gmbPhoto{height:68px;border-radius:14px;background:rgba(15,23,42,.06);position:relative}
+.gmbSkel:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(15,23,42,.04), rgba(15,23,42,.10), rgba(15,23,42,.04));
+  animation:gmbShimmer 1.2s infinite;
+}
+@keyframes gmbShimmer{0%{transform:translateX(-40%)}100%{transform:translateX(40%)}}
+
+.gmbProgress{margin-top:14px}
+.gmbBar{height:10px;border-radius:999px;background:rgba(15,23,42,.06)}
+.gmbFill{
+  height:100%;width:0%;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(37,99,235,.65), rgba(167,139,250,.55));
+  transition:width .6s ease;
+}
+.gmbStep{margin-top:8px;font-size:12px;color:var(--muted);font-weight:700}
+
   
 </style>
 
@@ -1510,6 +1702,51 @@ header a:hover, nav a:hover{
       window.location.href = \`mailto:\${to}?subject=\${subject}&body=\${body}\`;
     });
   </script>
+
+<script>
+(function(){
+  const rating = document.getElementById('ratingNum');
+  const reviews = document.getElementById('reviewsNum');
+  const fill = document.getElementById('fill');
+  const step = document.getElementById('stepText');
+  const status = document.getElementById('gmbStatus');
+  const stars = document.querySelectorAll('.gmbStar');
+
+  function setStars(n){
+    stars.forEach((s,i)=>s.classList.toggle('on', i<n));
+  }
+
+  function run(){
+    rating.textContent = '3,2';
+    reviews.textContent = '2 avis';
+    fill.style.width = '0%';
+    step.textContent = 'Analyse de la fiche…';
+    status.className = 'gmbBadge';
+    status.innerHTML = '<span class="dot"></span> Analyse IA…';
+    setStars(3);
+
+    setTimeout(()=>{
+      fill.style.width = '50%';
+      step.textContent = 'Avis & confiance (objectif 25+)';
+      rating.textContent = '4,8';
+      reviews.textContent = '25 avis';
+      setStars(5);
+    },1200);
+
+    setTimeout(()=>{
+      fill.style.width = '100%';
+      status.className = 'gmbBadge good';
+      status.innerHTML = '<span class="dot"></span> Fiche optimisée ✔';
+      step.textContent = 'Plus de visibilité, plus de clics, plus de clients';
+    },2400);
+  }
+
+  document.getElementById('gmbReplay').addEventListener('click', run);
+  run();
+})();
+</script>
+
+  
 </body>
 </html>
 
