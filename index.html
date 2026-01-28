@@ -594,25 +594,39 @@ header a:hover, nav a:hover{
         </p>
       </div>
 
-      <form class="lbLeadForm" id="leadMagnetForm">
-        <div class="lbLeadFields">
-          <label class="lbLeadLabel" for="lmCompany">Nom de l’entreprise</label>
-          <input id="lmCompany" name="company" placeholder="Ex : Le Coup de Bol" required>
-        </div>
+   <form
+  class="lbLeadForm"
+  id="leadMagnetForm"
+  action="https://formspree.io/f/TON_ID_LEADMAGNET"
+  method="POST"
+>
+  <!-- meta Formspree -->
+  <input type="hidden" name="_subject" value="Lead Magnet — Score GMB + IA (LocalBoost IA)">
+  <input type="hidden" name="source" value="leadmagnet_top">
+  <input type="hidden" name="type" value="score_gmb_ia_30s">
 
-        <div class="lbLeadFields">
-          <label class="lbLeadLabel" for="lmEmail">Email</label>
-          <input id="lmEmail" name="email" type="email" placeholder="email@exemple.com" required>
-        </div>
+  <div class="lbLeadFields">
+    <label class="lbLeadLabel" for="lmCompany">Nom de l’entreprise</label>
+    <input id="lmCompany" name="company" placeholder="Ex : Le Coup de Bol" required>
+  </div>
 
-        <button class="btn primary lbLeadBtn" type="submit">
-          Recevoir mon audit IA gratuit
-        </button>
+  <div class="lbLeadFields">
+    <label class="lbLeadLabel" for="lmEmail">Email</label>
+    <input id="lmEmail" name="email" type="email" placeholder="email@exemple.com" required>
+  </div>
 
-        <div class="lbLeadFine">
-          Zéro spam. Audit envoyé par email. Vous pouvez vous désinscrire à tout moment.
-        </div>
-      </form>
+  <button class="btn primary lbLeadBtn" type="submit" id="lmSubmit">
+    Recevoir mon audit IA gratuit
+  </button>
+
+  <!-- Message inline -->
+  <div class="lbLeadStatus" id="lmStatus" aria-live="polite" style="display:none;"></div>
+
+  <div class="lbLeadFine">
+    Zéro spam. Audit envoyé par email. Vous pouvez vous désinscrire à tout moment.
+  </div>
+</form>
+
     </div>
   </div>
 </section>
