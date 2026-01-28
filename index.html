@@ -1926,62 +1926,128 @@ header a:hover, nav a:hover{
       <div class="wrap">
         <div class="sectionHead">
           <div>
-            <h2>Contact & Audit gratuit</h2>
+            <h2>Contact & Devis</h2>
           </div>
         </div>
 
         <div class="contactGrid">
           <div class="card form">
-            <form
-  id="leadForm"
+           <form
+  id="hotLeadForm"
   action="https://formspree.io/f/mdaaanaq"
   method="POST"
 >
-  <input type="hidden" name="_subject" value="Nouveau contact - LocalBoost IA" />
+  <!-- Meta -->
+  <input type="hidden" name="_subject" value="Prospect chaud — Devis LocalBoost IA" />
+  <input type="hidden" name="source" value="bottom_hot_form" />
+  <input type="hidden" name="lead_type" value="hot" />
 
-              <div class="formRow">
-                <div>
-                  <label for="name">Nom</label>
-                  <input id="name" name="name" placeholder="Votre nom" required />
-                </div>
-                <div>
-                  <label for="company">Entreprise</label>
-                  <input id="company" name="company" placeholder="Nom de l’entreprise" required />
-                </div>
-              </div>
+  <div class="formRow">
+    <div>
+      <label for="name">Nom</label>
+      <input id="name" name="name" placeholder="Votre nom" required />
+    </div>
+    <div>
+      <label for="company">Entreprise</label>
+      <input id="company" name="company" placeholder="Nom de l’entreprise" required />
+    </div>
+  </div>
 
-              <div class="formRow">
-                <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="email@exemple.com" required />
-                </div>
-                <div>
-                  <label for="phone">Téléphone (option)</label>
-                  <input id="phone" name="phone" placeholder="06…" />
-                </div>
-              </div>
+  <div class="formRow">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="email@exemple.com" required />
+    </div>
+    <div>
+      <label for="phone">Téléphone (option)</label>
+      <input id="phone" name="phone" placeholder="06…" />
+    </div>
+  </div>
 
-              <label for="zone">Zone / Ville</label>
-              <input id="zone" name="zone" placeholder="Ex: Saint-Paul, La Réunion" required />
+  <div class="formRow">
+    <div>
+      <label for="activity">Type d’activité</label>
+      <select id="activity" name="activity" required>
+        <option value="" disabled selected>Choisir…</option>
+        <option value="Restaurant / Bar">Restaurant / Bar</option>
+        <option value="Hébergement (gîte, hôtel, location)">Hébergement (gîte, hôtel, location)</option>
+        <option value="Activité / Loisirs / Tourisme">Activité / Loisirs / Tourisme</option>
+        <option value="Commerce / Artisan / Indépendant">Commerce / Artisan / Indépendant</option>
+        <option value="Autre">Autre</option>
+      </select>
+    </div>
 
-              <label for="link">Lien de la fiche Google (option)</label>
-              <input id="link" name="link" placeholder="Lien Google Maps / Business Profile" />
+    <div>
+      <label for="zone">Zone / Ville</label>
+      <input id="zone" name="zone" placeholder="Ex : Saint-Paul, La Réunion" required />
+    </div>
+  </div>
 
-              <label for="pack">Pack souhaité</label>
-              <select id="pack" name="pack">
-                <option value="Non défini">Je ne sais pas (recommandation)</option>
-                <option value="STARTER">STARTER</option>
-                <option value="PRO">PRO</option>
-                <option value="PRO+">PRO+</option>
-                <option value="SUIVI">Suivi mensuel</option>
-              </select>
+  <label for="link">Lien de la fiche Google (recommandé)</label>
+  <input id="link" name="link" placeholder="Lien Google Maps / Business Profile" />
 
-              <label for="msg">Message</label>
-              <textarea id="msg" name="msg" placeholder="Décrivez votre activité, votre objectif (plus d’appels / réservations), et ce qui vous pose problème aujourd’hui."></textarea>
+  <div class="formRow">
+    <div>
+      <label for="goal">Objectif principal</label>
+      <select id="goal" name="goal" required>
+        <option value="" disabled selected>Choisir…</option>
+        <option value="Plus d’appels">Plus d’appels</option>
+        <option value="Plus de réservations / demandes">Plus de réservations / demandes</option>
+        <option value="Plus de visites (itinéraires)">Plus de visites (itinéraires)</option>
+        <option value="Être mieux visible sur Google Maps">Être mieux visible sur Google Maps</option>
+        <option value="Être mieux recommandé dans les moteurs IA">Être mieux recommandé dans les moteurs IA</option>
+        <option value="Je ne sais pas (recommandation)">Je ne sais pas (recommandation)</option>
+      </select>
+    </div>
 
-              <button class="btn primary" type="submit">Envoyer la demande</button>
-              <p class="hint">Votre demande est envoyée directement à LocalBoost IA. Réponse sous 24–48h.</p>
-            </form>
+    <div>
+      <label for="timeline">Délai souhaité</label>
+      <select id="timeline" name="timeline" required>
+        <option value="" disabled selected>Choisir…</option>
+        <option value="Dès que possible">Dès que possible</option>
+        <option value="Cette semaine">Cette semaine</option>
+        <option value="Sous 2–3 semaines">Sous 2–3 semaines</option>
+        <option value="Le mois prochain">Le mois prochain</option>
+        <option value="Je me renseigne">Je me renseigne</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="formRow">
+    <div>
+      <label for="budget">Budget indicatif (option)</label>
+      <select id="budget" name="budget">
+        <option value="Non renseigné" selected>Je préfère ne pas répondre</option>
+        <option value="Moins de 300€">Moins de 300€</option>
+        <option value="300–500€">300–500€</option>
+        <option value="500–800€">500–800€</option>
+        <option value="800€+">800€+</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="pack">Pack envisagé (option)</label>
+      <select id="pack" name="pack">
+        <option value="Non défini" selected>Je ne sais pas (recommandation)</option>
+        <option value="STARTER">STARTER</option>
+        <option value="PRO">PRO</option>
+        <option value="PRO+">PRO+</option>
+        <option value="SUIVI">Suivi mensuel</option>
+      </select>
+    </div>
+  </div>
+
+  <label for="msg">Contexte (option, mais recommandé)</label>
+  <textarea
+    id="msg"
+    name="msg"
+    placeholder="Ex : Je veux plus d’appels le week-end / je n’apparais pas sur 'restaurant + ville' / je veux préparer la saison…"
+  ></textarea>
+
+  <button class="btn primary" type="submit">Recevoir ma recommandation & devis</button>
+  <p class="hint">Réponse sous 24–48h avec une recommandation claire (Google Maps + moteurs IA) et le pack le plus adapté.</p>
+</form>
+
           </div>
 
           <div class="card" style="padding:18px">
