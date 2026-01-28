@@ -556,10 +556,10 @@ header a:hover, nav a:hover{
 
 
       <ul class="heroV2List" aria-label="Avantages">
-        <li><span class="heroV2Check">✓</span> Optimisation complète de votre Google Business Profile</li>
-        <li><span class="heroV2Check">✓</span> Contenus clairs et structurés, compris par les moteurs IA</li>
-        <li><span class="heroV2Check">✓</span> Résultats durables, sans publicité ni jargon</li>
-        <li><span class="heroV2Check">✓</span> Intervention rapide (5–7 jours)</li>
+        <li><span class="heroV2Check"></span> Optimisation complète de votre Google Business Profile</li>
+        <li><span class="heroV2Check"></span> Contenus clairs et structurés, compris par les moteurs IA</li>
+        <li><span class="heroV2Check"></span> Résultats durables, sans publicité ni jargon</li>
+        <li><span class="heroV2Check"></span> Intervention rapide (5–7 jours)</li>
       </ul>
     </div>
 
@@ -968,6 +968,44 @@ header a:hover, nav a:hover{
   color:#475569; /* gris lisible */
 }
 
+.heroV2List{
+  list-style: none;              /* ❌ enlève les points */
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.heroV2List li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--txt);
+}
+
+/* Icône validé */
+.heroV2Check{
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 6px;
+  background: rgba(52,211,153,.18);     /* vert doux */
+  border: 1px solid rgba(52,211,153,.35);
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+
+/* Check SVG via mask (net + pro) */
+.heroV2Check::before{
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #34D399;                  /* vert OK */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709a1 1 0 0 1 .006 1.414l-9.2 9.286a1 1 0 0 1-1.42-.004L3.71 11.71a1 1 0 1 1 1.414-1.414l4.256 4.256 8.493-8.563a1 1 0 0 1 1.412-.006z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709a1 1 0 0 1 .006 1.414l-9.2 9.286a1 1 0 0 1-1.42-.004L3.71 11.71a1 1 0 1 1 1.414-1.414l4.256 4.256 8.493-8.563a1 1 0 0 1 1.412-.006z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 
   
 </style>
