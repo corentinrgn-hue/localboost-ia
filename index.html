@@ -249,7 +249,23 @@ body{
     details p{color: var(--muted); margin: 10px 0 0}
 
     /* Contact */
-    .contactGrid{display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top:18px}
+
+.contactGrid{
+  display: grid;
+  grid-template-columns: 1fr;   /* ✅ UNE SEULE COLONNE */
+  justify-items: center;        /* ✅ CENTRAGE */
+}
+
+.contactGrid .form{
+  width: 100%;
+  max-width: 720px;             /* 🔥 largeur idéale */
+}
+
+    #contact .sectionHead{
+  justify-content: center;
+  text-align: center;
+}
+    
     .form{padding: 18px}
     label{display:block; font-weight:700; font-size: 13px; color: var(--muted); margin: 10px 0 6px}
     input, textarea, select{
