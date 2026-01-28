@@ -2110,33 +2110,87 @@ header a:hover, nav a:hover{
       });
     });
 
-    // Formulaire: mailto pré-rempli
-    const form = document.getElementById('leadForm');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
+// Formulaire prospect CHAUD : envoi Formspree (AJAX) + message inline
+(function(){
+  const form = document.getElementById('hotLeadForm'); // <= important
+  if (!form) return;
 
-      const payload = {
-        name: data.get('name') || '',
-        company: data.get('company') || '',
-        email: data.get('email') || '',
-        phone: data.get('phone') || '',
-        zone: data.get('zone') || '',
-        link: data.get('link') || '',
-        pack: data.get('pack') || 'Non défini',
-        msg: data.get('msg') || ''
-      };
+  // Crée un message inline si tu n’en as pas dans le HTML
+  let status = form.querySelector('.hotStatus');
+  if (!status){
+    status = document.createElement('div');
+    status.className = 'hotStatus';
+    status.style.display = 'none';
+    form.appendChild(status);
+  }
 
-      const to = 'corentin.rgn@gmail.com';
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-      const subject = encodeURIComponent(`[Audit Google & IA] ${payload.company} — ${payload.pack}`);
-      const body = encodeURIComponent(
-`Bonjour,\n\nJe souhaite un audit / devis pour améliorer notre visibilité Google Maps & IA.\n\n— Informations —\nNom : ${payload.name}\nEntreprise : ${payload.company}\nEmail : ${payload.email}\nTéléphone : ${payload.phone}\nZone : ${payload.zone}\nFiche Google (lien) : ${payload.link}\nPack souhaité : ${payload.pack}\n\nMessage :\n${payload.msg}\n\nMerci !`
-      );
+  function showStatus(msg, type){
+    status.textContent = msg;
+    status.style.display = 'block';
+    status.style.marginTop = '10px';
+    status.style.padding = '10px 12px';
+    status.style.borderRadius = '14px';
+    status.style.border = '1px solid rgba(229,231,235,.12)';
+    status.style.background = 'rgba(255,255,255,.03)';
+    status.style.color = 'var(--txt)';
+    status.style.fontWeight = '800';
+    status.style.fontSize = '13px';
 
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    if (type === 'ok'){
+      status.style.borderColor = 'rgba(52,211,153,.35)';
+      status.style.background = 'rgba(52,211,153,.10)';
+    }
+    if (type === 'err'){
+      status.style.borderColor = 'rgba(251,191,36,.35)';
+      status.style.background = 'rgba(251,191,36,.10)';
+    }
+  }
 
-    });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const original = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn){
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi…';
+    }
+
+    try{
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok){
+        form.reset();
+        showStatus('✅ Demande envoyée ! Je reviens vers vous sous 24–48h avec une recommandation et un devis.', 'ok');
+        if (submitBtn){
+          submitBtn.textContent = '✅ Envoyé';
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = original;
+          }, 2500);
+        }
+      } else {
+        showStatus('⚠️ Oups, l’envoi a échoué. Réessayez ou contactez-moi par email.', 'err');
+        if (submitBtn){
+          submitBtn.disabled = false;
+          submitBtn.textContent = original;
+        }
+      }
+    } catch(err){
+      showStatus('⚠️ Problème réseau. Réessayez dans quelques instants.', 'err');
+      if (submitBtn){
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+      }
+    }
+  });
+})();
+
   </script>
 
 <script>
