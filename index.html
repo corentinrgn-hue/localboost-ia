@@ -581,6 +581,45 @@ header a:hover, nav a:hover{
   </div>
 </section>
 
+    <!-- ===== Lead Magnet (Score GMB en 30 sec) ===== -->
+<section id="leadmagnet" class="lbLead">
+  <div class="wrap">
+    <div class="card lbLeadCard">
+      <div class="lbLeadLeft">
+        <div class="lbLeadKicker">⚡ Audit express • 30 secondes</div>
+        <h2 class="lbLeadTitle">Découvrez ce que Google pense de vous.</h2>
+        <p class="lbLeadSub">
+          Entrez votre email et recevez un score “Google Maps + IA” avec 3 actions prioritaires
+          à appliquer tout de suite.
+        </p>
+      </div>
+
+      <form class="lbLeadForm" id="leadMagnetForm">
+        <div class="lbLeadFields">
+          <label class="lbLeadLabel" for="lmCompany">Nom de l’entreprise</label>
+          <input id="lmCompany" name="company" placeholder="Ex : Le Coup de Bol" required>
+        </div>
+
+        <div class="lbLeadFields">
+          <label class="lbLeadLabel" for="lmEmail">Email</label>
+          <input id="lmEmail" name="email" type="email" placeholder="email@exemple.com" required>
+        </div>
+
+        <button class="btn primary lbLeadBtn" type="submit">
+          Recevoir mon audit IA gratuit
+        </button>
+
+        <div class="lbLeadFine">
+          Zéro spam. Audit envoyé par email. Vous pouvez vous désinscrire à tout moment.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- ===== /Lead Magnet ===== -->
+
+
+    
     <!-- NOUVELLE SECTION (Problème → Solution → Ce que je fais) -->
     <section id="pourquoi">
       <div class="wrap">
@@ -1699,6 +1738,109 @@ header a:hover, nav a:hover{
 
 .gmbStar.on{
   opacity: 1;
+}
+
+  /* =========================
+   Lead Magnet (même charte)
+   ========================= */
+.lbLead{ padding: 22px 0 10px; }
+
+.lbLeadCard{
+  padding: 18px;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 16px;
+  align-items:center;
+  border-radius: var(--radius2);
+  position:relative;
+  overflow:hidden;
+}
+
+.lbLeadCard::before{
+  content:"";
+  position:absolute; inset:-1px;
+  background:
+    radial-gradient(700px 260px at 15% 0%, rgba(103,232,249,.14), transparent 60%),
+    radial-gradient(700px 260px at 85% 20%, rgba(167,139,250,.12), transparent 60%);
+  pointer-events:none;
+  opacity: .95;
+}
+.lbLeadCard > *{ position:relative; z-index:1; }
+
+.lbLeadKicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border:1px solid rgba(103,232,249,.25);
+  background: rgba(103,232,249,.08);
+  color:#CFFAFE;
+  font-weight:900;
+  font-size:12.5px;
+  letter-spacing:.2px;
+}
+
+.lbLeadTitle{
+  margin: 10px 0 6px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.lbLeadSub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  max-width: 62ch;
+}
+
+.lbLeadForm{
+  display:grid;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(15,23,42,.55);
+  border: 1px solid var(--border);
+}
+
+.lbLeadFields{ display:grid; gap:6px; }
+
+.lbLeadLabel{
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lbLeadForm input{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(11,18,32,.55);
+  color: var(--txt);
+  outline: none;
+}
+
+.lbLeadForm input:focus{
+  border-color: rgba(103,232,249,.35);
+  box-shadow: 0 0 0 4px rgba(103,232,249,.10);
+}
+
+.lbLeadBtn{
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  justify-content: center;
+}
+
+.lbLeadFine{
+  font-size: 12px;
+  color: rgba(229,231,235,.65);
+  line-height: 1.35;
+}
+
+@media (max-width: 980px){
+  .lbLeadCard{ grid-template-columns: 1fr; }
 }
 
   
