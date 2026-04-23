@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude — LocalBoost IA</title>
+  <meta name="description" content="Pourquoi certains établissements touristiques apparaissent dans ChatGPT, Gemini ou Claude et d’autres restent invisibles. Explications concrètes et actions prioritaires." />
+  <meta name="keywords" content="chatgpt tourisme, gemini tourisme, claude tourisme, GEO, visibilité IA, google maps, établissement touristique, google business profile" />
+  <meta property="og:title" content="Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude" />
+  <meta property="og:description" content="Comprendre pourquoi certains établissements ressortent dans les moteurs IA et comment améliorer votre visibilité." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-v1.png">
+
+  <style>
+    :root{
+      --bg:#F3F4F6;
+      --panel:#111A2E;
+      --panel2:#0F172A;
+      --card:#FFFFFF;
+      --accent:#2563EB;
+      --accent2:#A78BFA;
+      --ok:#34D399;
+      --cta-green:#16A34A;
+      --cta-green-hover:#256628;
+      --cta-green-text:#ECFDF3;
+      --border:#E5E7EB;
+      --shadow:0 20px 60px rgba(0,0,0,.12);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
+      --txt:#0F172A;
+      --muted:#475569;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.65;
+      padding-top:76px;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:9999;
+      backdrop-filter:blur(10px);
+      background:rgba(11,18,32,.65);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:none;
+      box-shadow:none;
+      border-radius:0;
+    }
+
+    .logo img{
+      width:250px;
+      height:250px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .links a{
+      color:rgba(255,255,255,.9);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .links a:hover{color:#ffffff}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+      gap:10px;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(103,232,249,.35);
+      background:rgba(255,255,255,.05);
+    }
+
+    .btn.cta{
+      background:var(--cta-green);
+      color:var(--cta-green-text);
+      border:1px solid rgba(46,125,50,.6);
+      box-shadow:none;
+      font-weight:800;
+    }
+
+    .btn.cta:hover{
+      background:var(--cta-green-hover);
+      border-color:rgba(46,125,50,.8);
+    }
+
+    .nav-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    section{padding:34px 0}
+
+    .heroBox{
+      background:linear-gradient(135deg, #0B1220 0%, #111A2E 100%);
+      color:#fff;
+      border-radius:26px;
+      padding:42px 32px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 20px 60px rgba(0,0,0,.20);
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(103,232,249,.25);
+      background:rgba(103,232,249,.08);
+      color:#CFFAFE;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.3px;
+    }
+
+    h1{
+      margin:16px 0 12px;
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1.06;
+    }
+
+    .heroSub{
+      color:rgba(255,255,255,.78);
+      font-size:17px;
+      max-width:72ch;
+      margin:0;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .meta span{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.88);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .contentGrid{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 320px;
+      gap:20px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(15,23,42,.06);
+    }
+
+    .article{
+      padding:28px;
+    }
+
+    .article h2{
+      margin:32px 0 10px;
+      font-size:28px;
+      line-height:1.15;
+    }
+
+    .article p{
+      margin:0 0 16px;
+      color:#1E293B;
+      font-size:16px;
+    }
+
+    .article strong{
+      color:#0F172A;
+    }
+
+    .article ul{
+      margin:0 0 18px 0;
+      padding-left:20px;
+      color:#1E293B;
+    }
+
+    .article li{
+      margin-bottom:10px;
+    }
+
+    .lead{
+      font-size:18px;
+      color:#334155;
+    }
+
+    .callout{
+      border-left:4px solid var(--accent);
+      background:#F8FAFC;
+      padding:18px;
+      border-radius:14px;
+      margin:22px 0;
+    }
+
+    .callout p{
+      margin:0;
+      color:#334155;
+    }
+
+    .checklist{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin:0;
+    }
+
+    .tick{
+      color:var(--ok);
+      font-weight:900;
+    }
+
+    .aside{
+      padding:20px;
+      position:sticky;
+      top:96px;
+    }
+
+    .aside h3{
+      margin:0 0 10px;
+      font-size:18px;
+    }
+
+    .aside p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .aside .miniList{
+      list-style:none;
+      padding:0;
+      margin:0 0 18px;
+      display:grid;
+      gap:10px;
+    }
+
+    .aside .miniList li{
+      color:#334155;
+      font-size:14px;
+    }
+
+    .aside .miniList a{
+      color:#0F172A;
+      font-weight:700;
+    }
+
+    .aside .miniList a:hover{
+      text-decoration:underline;
+    }
+
+    .ctaBox{
+      margin-top:18px;
+      padding:22px;
+    }
+
+    .ctaBox h3{
+      margin:0 0 8px;
+      font-size:22px;
+    }
+
+    .ctaBox p{
+      margin:0 0 16px;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:16px 0 22px;
+      background:#000000;
+      color:#ffffff;
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:34px;
+    }
+
+    footer .muted{
+      color:rgba(255,255,255,.65);
+    }
+
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    @media (max-width: 980px){
+      .contentGrid{grid-template-columns:1fr}
+      .aside{position:static}
+      .links{display:none}
+    }
+
+    @media (max-width: 520px){
+      .btn{width:100%}
+      .heroBox{padding:28px 20px}
+      .article{padding:22px}
+      .article h2{font-size:24px}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Retour à l’accueil">
+      <div class="logo">
+        <img src="assets/logo-v3.png" alt="LocalBoost IA – visibilité locale Google et IA" />
+      </div>
+    </a>
+
+    <nav class="links" aria-label="Navigation">
+      <a href="index.html#offres">Offres</a>
+      <a href="index.html#methode">Méthode</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn cta" href="index.html#leadmagnet">Audit gratuit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="heroBox">
+        <span class="kicker">Article pilier • Tourisme, IA, visibilité locale</span>
+        <h1>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h1>
+        <p class="heroSub">
+          Les voyageurs ne cherchent plus seulement sur Google. Ils demandent directement à l’IA
+          où dormir, où manger et quoi faire. Et si votre établissement n’est pas bien compris,
+          il n’est tout simplement pas recommandé.
+        </p>
+        <div class="meta">
+          <span>Temps de lecture : 6 min</span>
+          <span>GEO</span>
+          <span>Tourisme</span>
+          <span>Google Maps + IA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contentGrid">
+      <article class="card article">
+        <p class="lead">
+          Beaucoup d’établissements pensent encore que leur visibilité dépend principalement de Google.
+          C’est déjà incomplet. Aujourd’hui, un voyageur peut demander à ChatGPT, Gemini ou Claude :
+          <strong>“Quel restaurant avec vue choisir à La Réunion ?”</strong>,
+          <strong>“Où dormir pour faire le volcan ?”</strong> ou
+          <strong>“Quelle activité originale faire en couple ce week-end ?”</strong>
+        </p>
+
+        <p>
+          Dans ce nouveau contexte, votre enjeu n’est plus seulement d’être “présent en ligne”.
+          Votre enjeu est d’être <strong>compréhensible, crédible et recommandable</strong>.
+          Et c’est précisément là que beaucoup d’établissements décrochent.
+        </p>
+
+        <h2>Le vrai changement : la recherche devient conversationnelle</h2>
+        <p>
+          Avant, un client tapait quelques mots-clés dans Google puis comparait plusieurs résultats.
+          Maintenant, il formule une demande complète, avec un contexte, un besoin et parfois des contraintes
+          précises : budget, ambiance, localisation, horaires, type d’expérience ou avis.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Conséquence directe :</strong> si votre établissement n’envoie pas des signaux clairs
+            sur ce que vous proposez réellement, l’IA a moins de matière pour vous recommander.
+          </p>
+        </div>
+
+        <p>
+          Les moteurs IA ne “devinent” pas. Ils synthétisent ce qu’ils comprennent à partir de plusieurs signaux :
+          votre fiche Google Business Profile, votre site, vos avis, vos photos, vos contenus, la cohérence
+          de vos informations et la manière dont votre activité est décrite.
+        </p>
+
+        <h2>Pourquoi certains établissements ressortent… et d’autres non</h2>
+        <p>
+          Un établissement touristique peut rester invisible dans les réponses IA pour cinq raisons principales.
+        </p>
+
+        <ul>
+          <li><strong>Sa proposition est floue :</strong> l’IA comprend mal le type d’expérience proposée.</li>
+          <li><strong>Les informations sont incomplètes :</strong> services, catégories, zones desservies, détails pratiques.</li>
+          <li><strong>Les signaux sont incohérents :</strong> horaires différents, descriptions vagues, informations contradictoires.</li>
+          <li><strong>La preuve est faible :</strong> peu d’avis, peu de photos, peu d’éléments concrets pour rassurer.</li>
+          <li><strong>La fiche Google n’est pas exploitée à fond :</strong> alors qu’elle reste l’un des premiers socles de visibilité locale.</li>
+        </ul>
+
+        <p>
+          Le point critique, c’est que beaucoup d’entreprises ont une présence numérique,
+          mais pas une présence <strong>structurée</strong>. Or l’IA favorise ce qu’elle peut relier,
+          résumer et expliquer clairement.
+        </p>
+
+        <h2>Dans le tourisme, le problème est encore plus important</h2>
+        <p>
+          Dans le tourisme, un client ne cherche pas seulement un nom. Il cherche une expérience.
+          Il compare des ambiances, des promesses, des localisations, des contraintes logistiques,
+          des activités à proximité et des preuves de qualité.
+        </p>
+
+        <p>
+          Un hébergement, un restaurant ou une activité touristique est souvent choisi dans un contexte
+          d’arbitrage rapide. Si un moteur IA recommande trois options et que vous n’en faites pas partie,
+          vous perdez la bataille avant même la visite du site.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Autrement dit :</strong> votre concurrent peut gagner sans être meilleur.
+            Il lui suffit d’être mieux compris.
+          </p>
+        </div>
+
+        <h2>Ce que l’IA cherche réellement à comprendre</h2>
+        <p>
+          Pour recommander un établissement, un moteur IA essaie implicitement de répondre à plusieurs questions :
+        </p>
+
+        <ul>
+          <li>Quel est le type exact d’établissement ?</li>
+          <li>À qui s’adresse-t-il ?</li>
+          <li>Quelle expérience propose-t-il ?</li>
+          <li>Dans quelle zone est-il pertinent ?</li>
+          <li>Quelles preuves confirment sa qualité ?</li>
+          <li>Pourquoi le recommander plutôt qu’un autre ?</li>
+        </ul>
+
+        <p>
+          Si ton site, ta fiche Google et tes contenus n’apportent pas clairement ces réponses,
+          ta visibilité dans les moteurs IA sera mécaniquement plus faible.
+        </p>
+
+        <h2>Les signaux les plus importants à renforcer</h2>
+        <p>
+          Tu n’as pas besoin de “faire de l’IA” au sens technologique du terme.
+          Tu dois surtout renforcer les bons signaux.
+        </p>
+
+        <ul class="checklist">
+          <li><span class="tick">✓</span><span><strong>Une fiche Google Business Profile complète et précise</strong> : catégories, services, description, attributs, horaires, zone, photos.</span></li>
+          <li><span class="tick">✓</span><span><strong>Un positionnement lisible</strong> : on doit comprendre en quelques secondes ce que tu proposes et pour qui.</span></li>
+          <li><span class="tick">✓</span><span><strong>Des preuves</strong> : avis clients, réponses aux avis, visuels de qualité, signaux de confiance.</span></li>
+          <li><span class="tick">✓</span><span><strong>Une cohérence des informations</strong> : même nom, mêmes services, même promesse sur tous les points de contact.</span></li>
+          <li><span class="tick">✓</span><span><strong>Un contenu descriptif utile</strong> : pas du remplissage, mais des formulations que Google et l’IA peuvent comprendre.</span></li>
+        </ul>
+
+        <h2>Le vrai sujet n’est pas “être sur ChatGPT”</h2>
+        <p>
+          Beaucoup de gens posent mal la question. Le but n’est pas “d’être sur ChatGPT” comme on serait sur une plateforme.
+          Le vrai sujet, c’est de construire une présence numérique suffisamment claire et crédible
+          pour que les moteurs IA puissent te citer, te recommander ou te considérer comme une option pertinente.
+        </p>
+
+        <p>
+          Donc non, il ne s’agit pas d’un gadget. Il s’agit d’une extension logique de la visibilité locale.
+          Ceux qui traitent encore ça comme un buzz auront simplement du retard.
+        </p>
+
+        <h2>Les 3 erreurs les plus fréquentes</h2>
+        <ul>
+          <li><strong>Parler trop vaguement de son activité</strong> : “expérience unique”, “cadre exceptionnel”, “service de qualité”… sans précision réelle.</li>
+          <li><strong>Négliger la fiche Google</strong> : alors qu’elle reste un pilier majeur de compréhension locale.</li>
+          <li><strong>Ne pas relier visibilité et conversion</strong> : l’objectif final n’est pas l’image, mais les appels, visites et réservations.</li>
+        </ul>
+
+        <h2>Ce qu’il faut retenir</h2>
+        <p>
+          Si votre établissement n’apparaît pas dans ChatGPT, Gemini ou Claude, ce n’est pas forcément parce qu’il est mauvais.
+          C’est souvent parce qu’il est <strong>mal structuré, mal expliqué ou insuffisamment prouvé</strong>.
+        </p>
+
+        <p>
+          Dans les mois qui viennent, les acteurs touristiques qui prendront ce sujet au sérieux auront un avantage réel :
+          ils seront plus visibles au moment même où les voyageurs formulent leur besoin.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>La bonne question n’est plus :</strong> “Suis-je visible sur Google ?”<br>
+            <strong>La vraie question devient :</strong> “Est-ce que Google et les moteurs IA comprennent vraiment pourquoi ils devraient me recommander ?”
+          </p>
+        </div>
+      </article>
+
+      <aside class="card aside">
+        <h3>Dans cet article</h3>
+        <ul class="miniList">
+          <li><a href="ressources.html">← Retour aux ressources</a></li>
+          <li>Recherche conversationnelle</li>
+          <li>Pourquoi certains ressortent</li>
+          <li>Impact spécifique dans le tourisme</li>
+          <li>Signaux à renforcer</li>
+          <li>Erreurs fréquentes</li>
+        </ul>
+
+        <h3>À lire ensuite</h3>
+        <ul class="miniList">
+          <li><a href="article-google-business-profile-google-maps.html">Optimiser sa fiche Google Business Profile</a></li>
+          <li><a href="article-tourisme-moteurs-ia.html">Pourquoi le tourisme doit s’adapter aux moteurs IA</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="card ctaBox">
+        <h3>Vous voulez savoir pourquoi votre établissement n’est pas encore bien visible ?</h3>
+        <p>
+          Je peux analyser votre présence actuelle sur Google Maps, la clarté de votre positionnement
+          et les signaux qui influencent votre compréhension par les moteurs IA.
+        </p>
+        <a class="btn cta" href="index.html#leadmagnet">Recevoir un audit gratuit</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong>LocalBoost IA</strong><br>
+      <span class="muted">Visibilité locale Google & IA pour les entreprises touristiques</span>
+    </div>
+    <div>
+      <a href="ressources.html">Ressources</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
