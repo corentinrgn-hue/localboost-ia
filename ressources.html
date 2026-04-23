@@ -372,6 +372,20 @@
       align-items:center;
     }
 
+    .articleThumb{
+  margin:-20px -20px 14px;
+  overflow:hidden;
+  border-radius:18px 18px 0 0;
+  border-bottom:1px solid var(--border);
+}
+
+.articleThumb img{
+  display:block;
+  width:100%;
+  height:210px;
+  object-fit:cover;
+}
+
     @media (max-width: 980px){
       .grid{grid-template-columns:1fr}
       .split{grid-template-columns:1fr}
@@ -441,24 +455,27 @@
         </div>
       </div>
 
-      <div class="grid">
-        <article class="card articleCard">
-          <span class="pill">Article pilier</span>
-          <h3>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h3>
-          <p>
-            Les voyageurs ne cherchent plus seulement sur Google. Ils demandent directement à l’IA
-            où dormir, où manger et quoi faire. Cet article explique pourquoi certains établissements
-            ressortent… et d’autres restent invisibles.
-          </p>
-          <div class="articleMeta">
-            <span class="tag">IA</span>
-            <span class="tag">Tourisme</span>
-            <span class="tag">Visibilité</span>
-          </div>
-          <div class="linkRow">
-            <a class="linkText" href="article-chatgpt-gemini-claude-tourisme.html">Lire l’article →</a>
-          </div>
-        </article>
+    <article class="card articleCard">
+  <div class="articleThumb">
+    <img src="assets/article-hero-chatgpt-tourisme.png" alt="Voyageur consultant une interface de recherche IA pour choisir un hôtel, un restaurant ou une activité touristique" />
+  </div>
+
+  <span class="pill">Article pilier</span>
+  <h3>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h3>
+  <p>
+    Les voyageurs ne cherchent plus seulement sur Google. Ils demandent directement à l’IA
+    où dormir, où manger et quoi faire. Cet article explique pourquoi certains établissements
+    ressortent… et d’autres restent invisibles.
+  </p>
+  <div class="articleMeta">
+    <span class="tag">IA</span>
+    <span class="tag">Tourisme</span>
+    <span class="tag">Visibilité</span>
+  </div>
+  <div class="linkRow">
+    <a class="linkText" href="article-chatgpt-gemini-claude-tourisme.html">Lire l’article →</a>
+  </div>
+</article>
 
         <article class="card articleCard">
           <span class="pill">Guide pratique</span>
