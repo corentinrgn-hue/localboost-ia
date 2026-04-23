@@ -205,6 +205,23 @@
       font-weight:700;
     }
 
+    .articleHeroImage{
+      overflow:hidden;
+      border-radius:22px;
+      margin-top:-6px;
+      background:var(--card);
+      border:1px solid var(--border);
+      box-shadow:0 8px 24px rgba(15,23,42,.06);
+    }
+
+    .articleHeroImage img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:520px;
+      object-fit:cover;
+    }
+
     .contentGrid{
       display:grid;
       grid-template-columns:minmax(0, 1fr) 320px;
@@ -416,6 +433,14 @@
           <span>Tourisme</span>
           <span>Google Maps + IA</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="articleHeroImage">
+        <img src="assets/article-hero-chatgpt-tourisme.png" alt="Voyageur consultant une interface de recherche IA pour choisir un hôtel, un restaurant ou une activité touristique" />
       </div>
     </div>
   </section>
