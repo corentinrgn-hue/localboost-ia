@@ -4,27 +4,560 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ressources — LocalBoost IA</title>
+  <meta name="description" content="Articles et analyses sur Google Maps, GEO, IA et visibilité locale pour les entreprises touristiques." />
+  <meta name="keywords" content="GEO, moteurs de recherche IA, tourisme, google maps, google business profile, visibilité locale, référencement local, IA tourisme" />
+  <meta property="og:title" content="Ressources — LocalBoost IA" />
+  <meta property="og:description" content="Articles et analyses sur Google Maps, GEO, IA et visibilité des entreprises touristiques." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-v1.png">
+
+  <style>
+    :root{
+      --bg:#F3F4F6;
+      --panel:#111A2E;
+      --panel2:#0F172A;
+      --card:#FFFFFF;
+      --stroke:rgba(15,23,42,.10);
+      --accent:#2563EB;
+      --accent2:#A78BFA;
+      --ok:#34D399;
+      --warn:#FBBF24;
+      --cta-green:#16A34A;
+      --cta-green-hover:#256628;
+      --cta-green-text:#ECFDF3;
+      --border:#E5E7EB;
+      --shadow:0 20px 60px rgba(0,0,0,.12);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
+      --txt:#0F172A;
+      --muted:#475569;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.5;
+      padding-top:76px;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:9999;
+      backdrop-filter:blur(10px);
+      background:rgba(11,18,32,.65);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:none;
+      box-shadow:none;
+      border-radius:0;
+    }
+
+    .logo img{
+      width:250px;
+      height:250px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .links a{
+      color:rgba(255,255,255,.9);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .links a:hover{color:#ffffff}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+      gap:10px;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(103,232,249,.35);
+      background:rgba(255,255,255,.05);
+    }
+
+    .btn.cta{
+      background:var(--cta-green);
+      color:var(--cta-green-text);
+      border:1px solid rgba(46,125,50,.6);
+      box-shadow:none;
+      font-weight:800;
+    }
+
+    .btn.cta:hover{
+      background:var(--cta-green-hover);
+      border-color:rgba(46,125,50,.8);
+    }
+
+    .navSocial{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-right:6px;
+    }
+
+    .nav-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    main section{padding:34px 0}
+
+    .hero{
+      padding:56px 0 26px;
+    }
+
+    .heroBox{
+      background:linear-gradient(135deg, #0B1220 0%, #111A2E 100%);
+      color:#fff;
+      border-radius:26px;
+      padding:42px 32px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 20px 60px rgba(0,0,0,.20);
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(103,232,249,.25);
+      background:rgba(103,232,249,.08);
+      color:#CFFAFE;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.3px;
+    }
+
+    h1{
+      margin:16px 0 12px;
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1.06;
+    }
+
+    .heroSub{
+      color:rgba(255,255,255,.78);
+      font-size:17px;
+      max-width:65ch;
+      margin:0;
+    }
+
+    .heroCtas{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn.light{
+      background:#fff;
+      color:#0F172A;
+      border:1px solid rgba(255,255,255,.9);
+    }
+
+    .btn.light:hover{
+      background:#f8fafc;
+    }
+
+    .sectionHead{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .sectionHead h2{
+      margin:0;
+      font-size:28px;
+    }
+
+    .sectionHead p{
+      margin:0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(15,23,42,.06);
+    }
+
+    .articleCard{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height:100%;
+    }
+
+    .pill{
+      display:inline-flex;
+      width:max-content;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      background:rgba(37,99,235,.08);
+      border:1px solid rgba(37,99,235,.14);
+      color:#1D4ED8;
+    }
+
+    .articleCard h3{
+      margin:0;
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .articleCard p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .articleMeta{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:auto;
+      padding-top:6px;
+    }
+
+    .tag{
+      font-size:12px;
+      font-weight:700;
+      color:#475569;
+      background:#F8FAFC;
+      border:1px solid #E2E8F0;
+      border-radius:999px;
+      padding:6px 10px;
+    }
+
+    .linkRow{
+      margin-top:2px;
+    }
+
+    .linkText{
+      font-weight:800;
+      color:#0F172A;
+    }
+
+    .linkText:hover{
+      text-decoration:underline;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .panelPad{padding:22px}
+
+    .list{
+      margin:14px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .list li{
+      display:flex;
+      gap:10px;
+      color:var(--muted);
+    }
+
+    .tick{
+      color:var(--ok);
+      font-weight:900;
+    }
+
+    .callout{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:22px;
+      margin-top:18px;
+    }
+
+    footer{
+      padding:16px 0 22px;
+      background:#000000;
+      color:#ffffff;
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:34px;
+    }
+
+    footer .muted{
+      color:rgba(255,255,255,.65);
+    }
+
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .links{display:none}
+    }
+
+    @media (max-width: 520px){
+      .btn{width:100%}
+      .heroCtas{width:100%}
+      .heroBox{padding:28px 20px}
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Accueil</a>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Retour à l’accueil">
+      <div class="logo">
+        <img src="assets/logo-v3.png" alt="LocalBoost IA – visibilité locale Google et IA" />
+      </div>
+    </a>
+
+    <nav class="links" aria-label="Navigation">
+      <a href="index.html#offres">Offres</a>
+      <a href="index.html#methode">Méthode</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-  </header>
 
-  <main>
-    <h1>Ressources</h1>
-    <p>Articles et analyses sur Google Maps, GEO, IA et visibilité des entreprises touristiques.</p>
+    <div class="nav-actions">
+      <a class="btn cta" href="index.html#leadmagnet">Audit gratuit</a>
+    </div>
+  </div>
+</header>
 
-    <article>
-      <h2>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h2>
-      <p>Résumé de l’article…</p>
-    </article>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="heroBox">
+        <span class="kicker">Ressources • Google Maps, GEO, IA & tourisme</span>
+        <h1>Comprendre les nouveaux usages de recherche avant vos concurrents</h1>
+        <p class="heroSub">
+          Articles et analyses pour aider les hébergements, restaurants et activités touristiques
+          à devenir plus visibles sur Google Maps et dans les moteurs de recherche IA.
+        </p>
 
-    <article>
-      <h2>Comment optimiser sa fiche Google Business Profile pour être plus visible sur Google Maps</h2>
-      <p>Résumé de l’article…</p>
-    </article>
-  </main>
+        <div class="heroCtas">
+          <a class="btn light" href="index.html#contact">Parler de votre visibilité</a>
+          <a class="btn" href="index.html">Retour à l’accueil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Articles à lire en priorité</h2>
+          <p>
+            Pas de contenu générique ici. Seulement des sujets utiles pour comprendre comment
+            Google, les moteurs IA et les nouveaux comportements de recherche influencent
+            concrètement la visibilité d’un établissement touristique.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card articleCard">
+          <span class="pill">Article pilier</span>
+          <h3>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h3>
+          <p>
+            Les voyageurs ne cherchent plus seulement sur Google. Ils demandent directement à l’IA
+            où dormir, où manger et quoi faire. Cet article explique pourquoi certains établissements
+            ressortent… et d’autres restent invisibles.
+          </p>
+          <div class="articleMeta">
+            <span class="tag">IA</span>
+            <span class="tag">Tourisme</span>
+            <span class="tag">Visibilité</span>
+          </div>
+          <div class="linkRow">
+            <a class="linkText" href="#">Lire l’article →</a>
+          </div>
+        </article>
+
+        <article class="card articleCard">
+          <span class="pill">Guide pratique</span>
+          <h3>Comment optimiser sa fiche Google Business Profile pour être plus visible sur Google Maps</h3>
+          <p>
+            Catégories, services, description, photos, avis, cohérence des informations :
+            voici les éléments qui pèsent réellement dans la visibilité locale d’un restaurant,
+            d’un hébergement ou d’une activité.
+          </p>
+          <div class="articleMeta">
+            <span class="tag">Google Maps</span>
+            <span class="tag">GBP</span>
+            <span class="tag">Local SEO</span>
+          </div>
+          <div class="linkRow">
+            <a class="linkText" href="#">Lire l’article →</a>
+          </div>
+        </article>
+
+        <article class="card articleCard">
+          <span class="pill">Analyse marché</span>
+          <h3>Pourquoi les acteurs du tourisme doivent s’adapter maintenant aux moteurs de recherche IA</h3>
+          <p>
+            Le sujet n’est pas théorique. Les nouveaux réflexes de recherche modifient déjà la manière
+            dont un client compare des établissements, construit son programme et prend sa décision.
+          </p>
+          <div class="articleMeta">
+            <span class="tag">GEO</span>
+            <span class="tag">Tourisme</span>
+            <span class="tag">Stratégie</span>
+          </div>
+          <div class="linkRow">
+            <a class="linkText" href="#">Lire l’article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div class="card panelPad">
+          <h2 style="margin:0 0 8px;">Pourquoi cette page existe</h2>
+          <p style="margin:0; color:var(--muted);">
+            Beaucoup d’entreprises touristiques sentent que quelque chose change dans la recherche en ligne,
+            mais ne savent pas encore quoi faire concrètement. Cette page a un objectif simple :
+            clarifier les nouveaux enjeux pour éviter le retard stratégique.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick">✓</span> Comprendre comment les moteurs IA sélectionnent et recommandent des établissements</li>
+            <li><span class="tick">✓</span> Identifier les points qui affaiblissent votre visibilité locale</li>
+            <li><span class="tick">✓</span> Relier Google Maps, contenu, avis et structuration des informations</li>
+            <li><span class="tick">✓</span> Traduire des notions floues comme “GEO” en actions concrètes</li>
+          </ul>
+        </div>
+
+        <div class="card panelPad">
+          <h2 style="margin:0 0 8px;">Ce que vous ne trouverez pas ici</h2>
+          <p style="margin:0; color:var(--muted);">
+            Pas de contenu creux sur “l’IA en général”. Pas d’articles trop larges. Pas de buzzwords
+            sans impact business. L’objectif est de rester sur ce qui compte réellement pour un établissement :
+            visibilité, compréhension, confiance et conversion.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick">✓</span> Pas de théorie inutile</li>
+            <li><span class="tick">✓</span> Pas de blog fourre-tout</li>
+            <li><span class="tick">✓</span> Pas de contenu déconnecté du terrain</li>
+            <li><span class="tick">✓</span> Une approche orientée acteurs touristiques</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card callout">
+        <div>
+          <h3 style="margin:0 0 6px;">Vous voulez savoir où votre visibilité bloque aujourd’hui ?</h3>
+          <p style="margin:0; color:var(--muted);">
+            Je peux analyser votre présence actuelle sur Google Maps et les signaux qui influencent
+            votre compréhension par les moteurs IA.
+          </p>
+        </div>
+        <a class="btn cta" href="index.html#leadmagnet">Recevoir un audit gratuit</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong>LocalBoost IA</strong><br>
+      <span class="muted">Visibilité locale Google & IA pour les entreprises touristiques</span>
+    </div>
+    <div>
+      <a href="index.html">Accueil</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
