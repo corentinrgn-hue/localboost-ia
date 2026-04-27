@@ -857,202 +857,240 @@ header a:hover, nav a:hover{
 
       </div>
     </section>
-<!-- ====== SECTION : STATISTIQUES (chiffres animés) ====== -->
-<section id="stats" class="lbStats">
+<!-- SECTION STATS PREMIUM IA -->
+<section id="stats-ia" class="statsIA">
   <div class="wrap">
-   
 
-    <div class="statsGrid" aria-label="Chiffres clés">
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="46" data-suffix="%">0</span>
-          </div>
-        </div>
-        <h3>des recherches sur Google ont une intention locale</h3>
-        <p><em>➡️ Vos clients vous cherchent déjà… encore faut-il apparaître.</em></p>
-      </article>
-
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="75" data-suffix="%">0</span>
-          </div>
-        </div>
-        <h3>des clics vont aux 3 premiers résultats (“Local Pack” Google)</h3>
-        <p><em>➡️ Si vous n’y êtes pas, vos concurrents y sont.</em></p>
-      </article>
-
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="28" data-suffix="%">0</span>
-          </div>
-        </div>
-        <h3>des recherches locales aboutissent à un achat</h3>
-        <p><em>➡️ Google Maps est un levier commercial direct.</em></p>
-      </article>
-
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="42" data-prefix="+"
-              data-suffix="%">0</span>
-          </div>
-        </div>
-        <h3>de demandes d’itinéraire pour les fiches avec de belles photos</h3>
-        <p><em>➡️ Photos de qualités= passages en magasin.</em></p>
-      </article>
-
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="76" data-suffix="%">0</span>
-          </div>
-        </div>
-        <h3>des personnes qui recherchent une entreprise locale sur mobile s’y rendent dans les 24h</h3>
-        <p><em>➡️ Visibilité locale = trafic réel, pas de virtuel.</em></p>
-      </article>
-
-      <article class="card statCard">
-        <div class="statTop">
-          <div class="statNum">
-            <span class="count" data-value="30" data-suffix="+">0</span>
-          </div>
-        </div>
-        <h3>À partir de 30 avis, la confiance progresse et les prises de contact suivent.</h3>
-        <p><em>➡️ Les avis sont un facteur décisif.</em></p>
-      </article>
+    <div class="sectionHead statsHead">
+      <span class="eyebrow">Le nouveau réflexe des touristes</span>
+      <h2>Vos clients ne comparent plus 10 sites.<br>Ils demandent directement à l’IA.</h2>
+      <p>
+        ChatGPT, Gemini, Perplexity ou Google ne listent pas tout le monde.
+        Ils recommandent seulement les établissements les plus clairs, fiables et visibles.
+      </p>
     </div>
 
-    <div class="card statsCallout">
-      <div>
-        <div class="statsCalloutTitle">En clair :</div>
-        <div class="muted">Une fiche optimisée peut générer <strong>jusqu’à 2× plus d’appels et de visites</strong>, sans publicité.</div>
+    <div class="statsGrid">
+
+      <div class="statCard">
+        <div class="statNumber" data-target="3">0</div>
+        <h3>recommandations visibles</h3>
+        <p>
+          Dans une réponse IA, seuls quelques établissements ressortent.
+          Les autres sont simplement ignorés.
+        </p>
       </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-        <a class="btn primary heroV2Btn" href="#leadmagnet">Audit gratuit</a>
-        <a class="btn" href="#offres">Voir les packs</a>
+
+      <div class="statCard dark">
+        <div class="statNumber">IA</div>
+        <h3>nouveau canal de décision</h3>
+        <p>
+          Les touristes demandent où manger, dormir ou quoi faire.
+          L’IA influence directement leur choix.
+        </p>
       </div>
+
+      <div class="statCard">
+        <div class="statNumber">+5</div>
+        <h3>signaux à optimiser</h3>
+        <p>
+          Fiche Google, avis, photos, cohérence web, services, Q&A :
+          chaque détail aide l’IA à vous comprendre.
+        </p>
+      </div>
+
+      <div class="statCard highlight">
+        <div class="statNumber">7j</div>
+        <h3>pour devenir plus lisible</h3>
+        <p>
+          En quelques jours, votre présence peut devenir plus claire,
+          plus crédible et plus recommandable.
+        </p>
+      </div>
+
     </div>
 
-<p class="statsFootnote">
-  <em>
-    * Données issues des études
-    <a href="https://www.brightlocal.com/research/"
-       target="_blank"
-       rel="noopener noreferrer">
-      <strong>BrightLocal</strong>
-    </a>
-    (référence mondiale du SEO local & comportement consommateurs).
-  </em>
-</p>
-
+    <div class="statsCTA">
+      <h3>Êtes-vous recommandé… ou invisible ?</h3>
+      <p>Recevez votre score de visibilité IA et les actions prioritaires à corriger.</p>
+      <a href="#leadmagnet" class="btn primary heroV2Btn">Voir mon score gratuit</a>
+    </div>
 
   </div>
+  <script>
+  const counters = document.querySelectorAll('.statNumber[data-target]');
+
+  const animateCounter = (counter) => {
+    const target = parseInt(counter.dataset.target, 10);
+    let current = 0;
+    const increment = target / 40;
+
+    const update = () => {
+      current += increment;
+      if (current < target) {
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    };
+
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated');
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+</script>
+</section>
 </section>
 
 <style>
-  /* ====== Stats (animées) — calé sur ta charte ====== */
-  .lbStats{ padding: 34px 0; }
+.statsIA {
+  padding: 90px 0;
+  background:
+    radial-gradient(circle at top left, rgba(42, 140, 255, 0.12), transparent 35%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
 
-  .statsGrid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 18px;
+.statsHead {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 42px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(31, 111, 235, 0.08);
+  color: #1f6feb;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.statsHead h2 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.statsHead p {
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.statCard {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.13);
+}
+
+.statCard.dark {
+  background: linear-gradient(135deg, #07111f, #12345a);
+  color: white;
+}
+
+.statCard.highlight {
+  background: linear-gradient(135deg, #1f6feb, #20c997);
+  color: white;
+}
+
+.statNumber {
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 18px;
+}
+
+.statCard h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.statCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.statCard.dark p,
+.statCard.highlight p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.statsCTA {
+  margin-top: 26px;
+  padding: 28px;
+  border-radius: 28px;
+  text-align: center;
+  background: #07111f;
+  color: white;
+  box-shadow: 0 22px 60px rgba(7, 17, 31, 0.18);
+}
+
+.statsCTA h3 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.statsCTA p {
+  margin: 0 auto 18px;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: 980px){
-    .statsGrid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .statsIA {
+    padding: 60px 0;
   }
 
-  .statCard{
-    padding: 16px;
-    border-radius: var(--radius2);
-    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-    position:relative;
-  }
-  .statCard::after{
-    content:"";
-    position:absolute; inset:-1px;
-    background:
-      radial-gradient(500px 220px at 20% 0%, rgba(103,232,249,.12), transparent 60%),
-      radial-gradient(520px 260px at 90% 10%, rgba(167,139,250,.10), transparent 60%);
-    pointer-events:none;
-    opacity:.9;
-  }
-  .statCard > *{ position:relative; z-index:1; }
-
-  .statTop{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom: 12px;
+  .statsGrid {
+    grid-template-columns: 1fr;
   }
 
-  .statIcon{
-    width:42px; height:42px;
-    border-radius: 16px;
-    display:grid; place-items:center;
-    background: rgba(103,232,249,.10);
-    border:1px solid rgba(103,232,249,.22);
-    color:#CFFAFE;
-    font-weight:900;
-    flex: 0 0 42px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  .statNumber {
+    font-size: 46px;
   }
-
-  .statNum{
-    font-size: 60px;
-    font-weight: 950;
-    letter-spacing: -0.05em;
-    text-align: center;
-  }
-  .statNum .count{
-    background: linear-gradient(90deg, rgba(103,232,249,1), rgba(167,139,250,1));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 8px 24px rgba(0,0,0,.18);
-  }
-
-  .statCard h3{
-    margin: 0 0 6px;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-  }
-  .statCard p{
-    margin: 0;
-    font-size: 13.5px;
-    color: var(--muted);
-  }
-
-  .statsCallout{
-    margin-top: 16px;
-    padding: 16px;
-    border-radius: var(--radius2);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap: 14px;
-    flex-wrap:wrap;
-  }
-  .statsCalloutTitle{
-    font-weight: 950;
-    font-size: 16px;
-    margin-bottom: 2px;
-  }
-  .statsCallout strong{ color: var(--txt); font-weight: 950; }
-
-  .statsFootnote{
-    margin: 12px 0 0;
-    font-size: 12px;
-    color: var(--muted);
-    opacity: .95;
-  }
+}
 
 .whoGrid{
   display:grid;
