@@ -3,407 +3,206 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ressources — LocalBoost IA</title>
-  <meta name="description" content="Articles et analyses sur Google Maps, GEO, IA et visibilité locale pour les entreprises touristiques." />
-  <meta name="keywords" content="GEO, moteurs de recherche IA, tourisme, google maps, google business profile, visibilité locale, référencement local, IA tourisme" />
-  <meta property="og:title" content="Ressources — LocalBoost IA" />
-  <meta property="og:description" content="Articles et analyses sur Google Maps, GEO, IA et visibilité des entreprises touristiques." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta name="theme-color" content="#0B1220" />
+
+  <title>Ressources — Atlas Studio</title>
+  <meta name="description" content="Articles, études et analyses pour comprendre l’impact de l’IA sur la visibilité des acteurs touristiques." />
+  <meta name="theme-color" content="#F6F0E7" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-v1.png">
 
   <style>
     :root{
-      --bg:#F3F4F6;
-      --panel:#111A2E;
-      --panel2:#0F172A;
-      --card:#FFFFFF;
-      --stroke:rgba(15,23,42,.10);
-      --accent:#2563EB;
-      --accent2:#A78BFA;
-      --ok:#34D399;
-      --warn:#FBBF24;
-      --cta-green:#16A34A;
-      --cta-green-hover:#256628;
-      --cta-green-text:#ECFDF3;
-      --border:#E5E7EB;
-      --shadow:0 20px 60px rgba(0,0,0,.12);
-      --radius:18px;
-      --radius2:26px;
-      --max:1120px;
-      --txt:#0F172A;
-      --muted:#475569;
+      --bg:#F6F0E7;
+      --sand:#EADCCB;
+      --cream:#FFFDF9;
+      --ink:#1D2328;
+      --muted:#6E6E6E;
+      --line:rgba(29,35,40,.12);
+      --green:#254B5A;
+      --green-2:#1B2B34;
+      --gold:#C56E4B;
+      --blue:#3E7C89;
+      --shadow:0 28px 80px rgba(18,32,28,.13);
+      --shadow-soft:0 18px 50px rgba(18,32,28,.08);
+      --max:1160px;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:var(--bg);
-      color:var(--txt);
-      line-height:1.5;
-      padding-top:76px;
+      padding-top:78px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(197,110,75,.16), transparent 28%),
+        radial-gradient(circle at 85% 8%, rgba(62,124,137,.14), transparent 30%),
+        var(--bg);
+      line-height:1.45;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+    section{padding:82px 0}
 
     header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:9999;
-      backdrop-filter:blur(10px);
-      background:rgba(11,18,32,.65);
-      border-bottom:1px solid var(--border);
+      position:fixed;inset:0 0 auto;z-index:50;
+      background:rgba(27,43,52,.94);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;color:white}
+    .brandMark{width:34px;height:26px;display:block}
+    .brandText{display:flex;flex-direction:column;line-height:1}
+    .brandText strong{font-size:21px;font-weight:800;letter-spacing:-.02em}
+    .brandText span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.54);margin-top:4px}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-
-    .logo{
-      width:40px;
-      height:40px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:none;
-      box-shadow:none;
-      border-radius:0;
-    }
-
-    .logo img{
-      width:250px;
-      height:250px;
-      object-fit:contain;
-      display:block;
-    }
-
-    .links{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .links a{
-      color:rgba(255,255,255,.9);
-      font-weight:600;
-      font-size:14px;
-    }
-
-    .links a:hover{color:#ffffff}
+    .links{display:flex;gap:24px;align-items:center}
+    .links a{font-size:13px;font-weight:800;color:rgba(255,255,255,.78)}
+    .links a:hover,.links a.active{color:var(--gold)}
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      color:#fff;
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:700;
-      gap:10px;
-      transition:transform .12s ease, border-color .12s ease, background .12s ease;
-      cursor:pointer;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      border-radius:999px;padding:13px 19px;border:1px solid var(--line);
+      background:rgba(255,255,255,.78);color:var(--ink);
+      font-weight:900;font-size:14px;box-shadow:0 10px 28px rgba(18,32,28,.06);
+      transition:.2s ease;white-space:nowrap;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(18,32,28,.13)}
+    .btn.primary,.btn.cta{background:var(--green);color:white;border-color:var(--green);box-shadow:0 20px 50px rgba(22,61,90,.24)}
+    .btn.secondary{background:transparent}
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;width:max-content;
+      padding:8px 13px;border-radius:999px;background:rgba(197,110,75,.09);
+      border:1px solid rgba(197,110,75,.16);color:var(--gold);font-size:12px;font-weight:950;
+      letter-spacing:.02em;text-transform:uppercase;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(103,232,249,.35);
-      background:rgba(255,255,255,.05);
-    }
-
-    .btn.cta{
-      background:var(--cta-green);
-      color:var(--cta-green-text);
-      border:1px solid rgba(46,125,50,.6);
-      box-shadow:none;
-      font-weight:800;
-    }
-
-    .btn.cta:hover{
-      background:var(--cta-green-hover);
-      border-color:rgba(46,125,50,.8);
-    }
-
-    .navSocial{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-right:6px;
-    }
-
-    .nav-actions{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    main section{padding:34px 0}
-
-    .hero{
-      padding:56px 0 26px;
-    }
-
-    .heroBox{
-      background:linear-gradient(135deg, #0B1220 0%, #111A2E 100%);
-      color:#fff;
-      border-radius:26px;
-      padding:42px 32px;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 20px 60px rgba(0,0,0,.20);
-    }
-
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(103,232,249,.25);
-      background:rgba(103,232,249,.08);
-      color:#CFFAFE;
-      font-weight:800;
-      font-size:13px;
-      letter-spacing:.3px;
-    }
-
+    .hero{padding:112px 0 76px;position:relative;overflow:hidden}
+    .heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:end}
     h1{
-      margin:16px 0 12px;
-      font-size:clamp(30px, 4vw, 48px);
-      line-height:1.06;
+      margin:18px 0 0;
+      max-width:820px;
+      font-size:clamp(46px,6vw,78px);
+      line-height:.93;
+      letter-spacing:-.06em;
+      font-weight:950;
     }
+    h1 span{color:var(--gold)}
+    .hero p{margin:24px 0 0;max-width:680px;font-size:20px;line-height:1.6;color:var(--muted);font-weight:650}
 
-    .heroSub{
-      color:rgba(255,255,255,.78);
-      font-size:17px;
-      max-width:65ch;
-      margin:0;
+    .heroCard{
+      padding:28px;
+      border-radius:36px;
+      background:linear-gradient(145deg,#1B2B34,#254B5A);
+      color:white;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
-
-    .heroCtas{
-      display:flex;
-      gap:12px;
-      margin-top:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn.light{
-      background:#fff;
-      color:#0F172A;
-      border:1px solid rgba(255,255,255,.9);
-    }
-
-    .btn.light:hover{
-      background:#f8fafc;
-    }
-
-    .sectionHead{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .sectionHead h2{
-      margin:0;
-      font-size:28px;
-    }
-
-    .sectionHead p{
-      margin:0;
-      color:var(--muted);
-      max-width:72ch;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      box-shadow:0 8px 24px rgba(15,23,42,.06);
-    }
-
-    .articleCard{
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      min-height:100%;
-    }
-
-    .pill{
-      display:inline-flex;
-      width:max-content;
-      padding:7px 10px;
+    .heroCard::after{
+      content:"";
+      position:absolute;
+      right:-80px;top:-80px;
+      width:240px;height:240px;
       border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      background:rgba(37,99,235,.08);
-      border:1px solid rgba(37,99,235,.14);
-      color:#1D4ED8;
+      background:rgba(197,110,75,.18);
+      filter:blur(55px);
     }
+    .heroCard > *{position:relative;z-index:1}
+    .heroCard h2{margin:0 0 12px;font-size:26px;letter-spacing:-.04em}
+    .heroCard p{margin:0;color:rgba(255,255,255,.72);font-size:15px;line-height:1.7}
+    .statLine{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .stat{padding:16px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .stat b{display:block;font-size:30px;line-height:1;color:#F0B08D;letter-spacing:-.04em}
+    .stat span{display:block;margin-top:7px;font-size:12px;color:rgba(255,255,255,.68);font-weight:800}
 
-    .articleCard h3{
-      margin:0;
-      font-size:20px;
-      line-height:1.2;
+    .featured{padding-top:20px}
+    .sectionHead{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:34px}
+    .sectionHead h2{margin:12px 0 0;font-size:clamp(34px,4.8vw,58px);line-height:.98;letter-spacing:-.045em;max-width:820px}
+    .sectionHead p{margin:14px 0 0;max-width:650px;color:var(--muted);font-size:17px;font-weight:620}
+
+    .articleGrid{display:grid;grid-template-columns:1.18fr .82fr;gap:22px}
+    .mainArticle,.sideArticle,.resourceCard{
+      border-radius:34px;
+      background:var(--cream);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
     }
+    .mainArticle{display:grid;grid-template-columns:.95fr 1.05fr;min-height:430px}
+    .articleImg{position:relative;min-height:260px;background:var(--green-2);overflow:hidden}
+    .articleImg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.02);transition:.35s ease}
+    .mainArticle:hover img,.sideArticle:hover img,.resourceCard:hover img{transform:scale(1.04)}
+    .articleImg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,43,52,.04),rgba(27,43,52,.38))}
+    .articleBody{padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+    .tag{display:inline-flex;width:max-content;padding:7px 10px;border-radius:999px;background:rgba(197,110,75,.10);border:1px solid rgba(197,110,75,.16);font-size:11px;font-weight:950;color:var(--gold);text-transform:uppercase;letter-spacing:.06em}
+    .articleBody h3{margin:16px 0 0;font-size:clamp(28px,3vw,42px);line-height:1.02;letter-spacing:-.055em}
+    .articleBody p{margin:14px 0 0;color:var(--muted);font-weight:600;line-height:1.65}
+    .articleMeta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px;font-weight:850}
+    .articleMeta span{padding:8px 10px;border-radius:999px;background:#F8F4EC;border:1px solid var(--line)}
 
-    .articleCard p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
+    .sideStack{display:grid;gap:18px}
+    .sideArticle{display:grid;grid-template-columns:130px 1fr;min-height:176px}
+    .sideArticle .articleImg{min-height:176px}
+    .sideArticle .articleBody{padding:20px;gap:16px}
+    .sideArticle h3{font-size:21px;line-height:1.08;letter-spacing:-.04em;margin:12px 0 0}
+    .sideArticle p{font-size:14px;margin:10px 0 0}
+
+    .library{background:linear-gradient(180deg,#F6F0E7,#FFFDF9)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+    .filter{padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.68);border:1px solid var(--line);font-size:13px;font-weight:850;color:var(--muted)}
+    .filter.active{background:var(--green);color:white;border-color:var(--green)}
+    .resourceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .resourceCard{transition:.25s ease}
+    .resourceCard:hover{transform:translateY(-4px)}
+    .resourceCard .articleImg{height:210px;min-height:210px}
+    .resourceCard .articleBody{padding:24px;gap:22px}
+    .resourceCard h3{font-size:24px;line-height:1.05;letter-spacing:-.045em;margin:14px 0 0}
+    .resourceCard p{font-size:14px;margin:12px 0 0}
+
+    .sourcesBox{
+      border-radius:36px;
+      background:var(--green-2);
+      color:white;
+      padding:38px 42px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
+    .sourcesBox::after{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;background:rgba(197,110,75,.16);filter:blur(70px);border-radius:50%}
+    .sourcesBox > *{position:relative;z-index:1}
+    .sourcesBox h2{margin:16px 0 0;font-size:clamp(34px,4vw,52px);line-height:.98;letter-spacing:-.05em;max-width:760px}
+    .sourcesBox p{margin:16px 0 0;max-width:760px;font-size:18px;line-height:1.7;color:rgba(255,255,255,.72);font-weight:600}
+    .sourceList{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .sourceItem{padding:18px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .sourceItem b{display:block;color:#F0B08D;margin-bottom:6px}
+    .sourceItem span{color:rgba(255,255,255,.68);font-size:14px;font-weight:600}
 
-    .articleMeta{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:auto;
-      padding-top:6px;
-    }
+    .ctaSection{padding-top:0}
+    .ctaBox{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;padding:30px;border-radius:34px;background:var(--cream);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+    .ctaBox h2{margin:0;font-size:32px;letter-spacing:-.045em}
+    .ctaBox p{margin:8px 0 0;color:var(--muted);font-weight:650}
 
-    .tag{
-      font-size:12px;
-      font-weight:700;
-      color:#475569;
-      background:#F8FAFC;
-      border:1px solid #E2E8F0;
-      border-radius:999px;
-      padding:6px 10px;
-    }
+    footer{padding:30px 0;background:#1B2B34;color:white}
+    footer a,footer .muted{color:rgba(255,255,255,.64)}
+    .foot{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+    .footerTitle{font-weight:950;color:white}
 
-    .linkRow{
-      margin-top:2px;
-    }
-
-    .linkText{
-      font-weight:800;
-      color:#0F172A;
-    }
-
-    .linkText:hover{
-      text-decoration:underline;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:18px;
-      margin-top:18px;
-    }
-
-    .panelPad{padding:22px}
-
-    .list{
-      margin:14px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:12px;
-    }
-
-    .list li{
-      display:flex;
-      gap:10px;
-      color:var(--muted);
-    }
-
-    .tick{
-      color:var(--ok);
-      font-weight:900;
-    }
-
-    .callout{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      padding:22px;
-      margin-top:18px;
-    }
-
-    footer{
-      padding:16px 0 22px;
-      background:#000000;
-      color:#ffffff;
-      border-top:1px solid rgba(255,255,255,.12);
-      margin-top:34px;
-    }
-
-    footer .muted{
-      color:rgba(255,255,255,.65);
-    }
-
-    .foot{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .articleThumb{
-  margin:-20px -20px 14px;
-  overflow:hidden;
-  border-radius:18px 18px 0 0;
-  border-bottom:1px solid var(--border);
-}
-
-.articleThumb img{
-  display:block;
-  width:100%;
-  height:210px;
-  object-fit:cover;
-}
-    .articleCardThumb{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:14px;
-  margin-bottom:14px;
-  display:block;
-}
-
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
+    @media(max-width:980px){
       .links{display:none}
+      .heroGrid,.articleGrid,.mainArticle{grid-template-columns:1fr}
+      .resourceGrid,.sourceList{grid-template-columns:1fr 1fr}
     }
-
-    @media (max-width: 520px){
-      .btn{width:100%}
-      .heroCtas{width:100%}
-      .heroBox{padding:28px 20px}
+    @media(max-width:620px){
+      body{padding-top:72px}.nav{height:72px}.brandText strong{font-size:18px}.brandMark{width:30px}.btn{width:100%}
+      section{padding:64px 0}.hero{padding:74px 0 54px}h1{font-size:44px}.hero p{font-size:17px}
+      .statLine,.resourceGrid,.sourceList{grid-template-columns:1fr}
+      .sideArticle{grid-template-columns:1fr}.sideArticle .articleImg{height:200px}
+      .sectionHead{display:block}.sectionHead h2{font-size:38px}
+      .ctaBox{align-items:flex-start}
     }
   </style>
 </head>
@@ -411,110 +210,194 @@
 <body>
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand" aria-label="Retour à l’accueil">
-      <div class="logo">
-        <img src="assets/logo-v3.png" alt="LocalBoost IA – visibilité locale Google et IA" />
-      </div>
+    <a href="index.html" class="brand" aria-label="Accueil Atlas Studio">
+      <svg class="brandMark" viewBox="0 0 80 56" fill="none" aria-hidden="true">
+        <path d="M8 44L25 22L37 37L49 14L72 44" stroke="#F0B08D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M25 22L37 37L43 29" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+      </svg>
+      <span class="brandText">
+        <strong>Atlas Studio</strong>
+        <span>Visibilité IA pour le tourisme</span>
+      </span>
     </a>
 
     <nav class="links" aria-label="Navigation">
+      <a href="index.html#dashboard-ia">Analyse IA</a>
       <a href="index.html#offres">Offres</a>
       <a href="index.html#methode">Méthode</a>
-      <a href="ressources.html">Ressources</a>
+      <a href="ressources.html" class="active">Ressources</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <div class="nav-actions">
-      <a class="btn cta" href="index.html#leadmagnet">Audit gratuit</a>
-    </div>
+    <div class="nav-actions"><a class="btn cta" href="index.html#leadmagnet">Audit gratuit</a></div>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="wrap">
-      <div class="heroBox">
-        <span class="kicker">Ressources • Google Maps, GEO, IA & tourisme</span>
-        <h1>Comprendre les nouveaux usages de recherche avant vos concurrents</h1>
-        <p class="heroSub">
-          Articles et analyses pour aider les hébergements, restaurants et activités touristiques
-          à devenir plus visibles sur Google Maps et dans les moteurs de recherche IA.
-        </p>
-
-        <div class="heroCtas">
-          <a class="btn light" href="index.html#contact">Parler de votre visibilité</a>
-          <a class="btn" href="index.html">Retour à l’accueil</a>
-        </div>
+    <div class="wrap heroGrid">
+      <div>
+        <span class="eyebrow">Ressources</span>
+        <h1>Comprendre comment l’IA transforme la <span>visibilité touristique</span>.</h1>
+        <p>Analyses, chiffres, tendances et guides pratiques pour aider les restaurants, hôtels et activités touristiques à rester visibles dans les nouveaux moteurs de recommandation.</p>
       </div>
+
+      <aside class="heroCard">
+        <h2>Objectif</h2>
+        <p>Créer une base de contenus crédible pour expliquer le marché, rassurer les prospects et renforcer l’autorité d’Atlas Studio.</p>
+        <div class="statLine">
+          <div class="stat"><b>IA</b><span>recommandation</span></div>
+          <div class="stat"><b>SEO</b><span>visibilité locale</span></div>
+          <div class="stat"><b>Tourisme</b><span>nouveaux usages</span></div>
+          <div class="stat"><b>Data</b><span>preuves & études</span></div>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section>
+  <section class="featured">
     <div class="wrap">
       <div class="sectionHead">
         <div>
-          <h2>Articles à lire en priorité</h2>
-          <p>
-            Pas de contenu générique ici. Seulement des sujets utiles pour comprendre comment
-            Google, les moteurs IA et les nouveaux comportements de recherche influencent
-            concrètement la visibilité d’un établissement touristique.
-          </p>
+          <span class="eyebrow">À la une</span>
+          <h2>Les sujets à maîtriser pour devenir visible dans les réponses IA.</h2>
+          <p>Ces articles doivent servir à éduquer le marché et à prouver que le sujet est réel, mesurable et stratégique.</p>
         </div>
       </div>
 
- <article class="card articleCard">
-  <img class="articleCardThumb" src="assets/article-hero-chatgpt-tourisme.png" alt="Voyageur consultant une interface de recherche IA pour choisir un hôtel, un restaurant ou une activité touristique" />
-
-  <span class="pill">Article pilier</span>
-  <h3>Pourquoi votre établissement touristique n’apparaît pas dans ChatGPT, Gemini ou Claude</h3>
-  <p>
-    Les voyageurs ne cherchent plus seulement sur Google. Ils demandent directement à l’IA
-    où dormir, où manger et quoi faire. Cet article explique pourquoi certains établissements
-    ressortent… et d’autres restent invisibles.
-  </p>
-  <div class="articleMeta">
-    <span class="tag">IA</span>
-    <span class="tag">Tourisme</span>
-    <span class="tag">Visibilité</span>
-  </div>
-  <div class="linkRow">
-    <a class="linkText" href="article-chatgpt-gemini-claude-tourisme.html">Lire l’article →</a>
-  </div>
-</article>
-
-        <article class="card articleCard">
-          <span class="pill">Guide pratique</span>
-          <h3>Comment optimiser sa fiche Google Business Profile pour être plus visible sur Google Maps</h3>
-          <p>
-            Catégories, services, description, photos, avis, cohérence des informations :
-            voici les éléments qui pèsent réellement dans la visibilité locale d’un restaurant,
-            d’un hébergement ou d’une activité.
-          </p>
-          <div class="articleMeta">
-            <span class="tag">Google Maps</span>
-            <span class="tag">GBP</span>
-            <span class="tag">Local SEO</span>
+      <div class="articleGrid">
+        <article class="mainArticle">
+          <div class="articleImg">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Voyageurs et visibilité touristique">
           </div>
-          <div class="linkRow">
-            <a class="linkText" href="#">Lire l’article →</a>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Guide stratégique</span>
+              <h3>Comment les IA choisissent les établissements touristiques qu’elles recommandent</h3>
+              <p>Un article pilier pour expliquer les signaux utilisés par les moteurs IA : avis, cohérence web, fiche Google, contenus, réputation et clarté de l’offre.</p>
+            </div>
+            <div class="articleMeta"><span>8 min</span><span>IA & tourisme</span><span>Article pilier</span></div>
           </div>
         </article>
 
-        <article class="card articleCard">
-          <span class="pill">Analyse marché</span>
-          <h3>Pourquoi les acteurs du tourisme doivent s’adapter maintenant aux moteurs de recherche IA</h3>
-          <p>
-            Le sujet n’est pas théorique. Les nouveaux réflexes de recherche modifient déjà la manière
-            dont un client compare des établissements, construit son programme et prend sa décision.
-          </p>
-          <div class="articleMeta">
-            <span class="tag">GEO</span>
-            <span class="tag">Tourisme</span>
-            <span class="tag">Stratégie</span>
+        <div class="sideStack">
+          <article class="sideArticle">
+            <div class="articleImg"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop" alt="Recherche IA et expérience client"></div>
+            <div class="articleBody">
+              <div>
+                <span class="tag">Tendance</span>
+                <h3>Pourquoi votre hôtel n’apparaît pas dans ChatGPT</h3>
+                <p>Les causes les plus fréquentes d’invisibilité IA.</p>
+              </div>
+              <div class="articleMeta"><span>6 min</span></div>
+            </div>
+          </article>
+
+          <article class="sideArticle">
+            <div class="articleImg"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=900&auto=format&fit=crop" alt="Restaurant touristique"></div>
+            <div class="articleBody">
+              <div>
+                <span class="tag">Local</span>
+                <h3>SEO local vs visibilité IA : ce qui change vraiment</h3>
+                <p>Le SEO local ne disparaît pas. Il devient une base.</p>
+              </div>
+              <div class="articleMeta"><span>7 min</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="library">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <span class="eyebrow">Bibliothèque</span>
+          <h2>Articles à publier progressivement.</h2>
+          <p>Tu peux commencer avec ces 6 contenus. Ils couvrent les objections, les usages et les preuves nécessaires pour crédibiliser ton offre.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <span class="filter active">Tous</span>
+        <span class="filter">IA & tourisme</span>
+        <span class="filter">SEO local</span>
+        <span class="filter">Google Business Profile</span>
+        <span class="filter">Études & chiffres</span>
+      </div>
+
+      <div class="resourceGrid">
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=900&auto=format&fit=crop" alt="Analyse digitale"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Études</span>
+              <h3>Les nouveaux usages IA dans la préparation de voyage</h3>
+              <p>Comment les voyageurs utilisent ChatGPT, Gemini et Perplexity pour choisir où dormir, manger et réserver.</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Priorité haute</span></div>
           </div>
-          <div class="linkRow">
-            <a class="linkText" href="#">Lire l’article →</a>
+        </article>
+
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=900&auto=format&fit=crop" alt="Hôtel premium"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Hôtellerie</span>
+              <h3>Comment rendre un hôtel plus recommandable par l’IA</h3>
+              <p>Les signaux à renforcer : pages services, avis, photos, FAQ, cohérence des informations et preuves de confiance.</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Conversion</span></div>
+          </div>
+        </article>
+
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=900&auto=format&fit=crop" alt="Restaurant local"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Restaurant</span>
+              <h3>Pourquoi un restaurant bien noté peut rester invisible dans les IA</h3>
+              <p>Une bonne note ne suffit pas si l’offre, les services et le positionnement ne sont pas clairement structurés.</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Cas concret</span></div>
+          </div>
+        </article>
+
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=900&auto=format&fit=crop" alt="Activité outdoor"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Outdoor</span>
+              <h3>Activités touristiques : être cité dans les recherches IA locales</h3>
+              <p>Comment structurer une offre d’expérience pour ressortir dans des recherches comme “activité outdoor familiale près de…”</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Niche forte</span></div>
+          </div>
+        </article>
+
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop" alt="Données et analyse"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Méthode</span>
+              <h3>Comment mesurer sa visibilité IA sans tomber dans le gadget</h3>
+              <p>Score, requêtes testées, présence concurrentielle : les bons indicateurs à suivre sans promettre l’impossible.</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Crédibilité</span></div>
+          </div>
+        </article>
+
+        <article class="resourceCard">
+          <div class="articleImg"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=900&auto=format&fit=crop" alt="Voyage et recherche"></div>
+          <div class="articleBody">
+            <div>
+              <span class="tag">Guide</span>
+              <h3>Checklist : préparer son établissement pour les moteurs IA</h3>
+              <p>Une checklist simple pour évaluer la lisibilité, la cohérence et la recommandabilité de son établissement.</p>
+            </div>
+            <div class="articleMeta"><span>À rédiger</span><span>Lead magnet</span></div>
           </div>
         </article>
       </div>
@@ -523,49 +406,27 @@
 
   <section>
     <div class="wrap">
-      <div class="split">
-        <div class="card panelPad">
-          <h2 style="margin:0 0 8px;">Pourquoi cette page existe</h2>
-          <p style="margin:0; color:var(--muted);">
-            Beaucoup d’entreprises touristiques sentent que quelque chose change dans la recherche en ligne,
-            mais ne savent pas encore quoi faire concrètement. Cette page a un objectif simple :
-            clarifier les nouveaux enjeux pour éviter le retard stratégique.
-          </p>
-
-          <ul class="list">
-            <li><span class="tick">✓</span> Comprendre comment les moteurs IA sélectionnent et recommandent des établissements</li>
-            <li><span class="tick">✓</span> Identifier les points qui affaiblissent votre visibilité locale</li>
-            <li><span class="tick">✓</span> Relier Google Maps, contenu, avis et structuration des informations</li>
-            <li><span class="tick">✓</span> Traduire des notions floues comme “GEO” en actions concrètes</li>
-          </ul>
-        </div>
-
-        <div class="card panelPad">
-          <h2 style="margin:0 0 8px;">Ce que vous ne trouverez pas ici</h2>
-          <p style="margin:0; color:var(--muted);">
-            Pas de contenu creux sur “l’IA en général”. Pas d’articles trop larges. Pas de buzzwords
-            sans impact business. L’objectif est de rester sur ce qui compte réellement pour un établissement :
-            visibilité, compréhension, confiance et conversion.
-          </p>
-
-          <ul class="list">
-            <li><span class="tick">✓</span> Pas de théorie inutile</li>
-            <li><span class="tick">✓</span> Pas de blog fourre-tout</li>
-            <li><span class="tick">✓</span> Pas de contenu déconnecté du terrain</li>
-            <li><span class="tick">✓</span> Une approche orientée acteurs touristiques</li>
-          </ul>
+      <div class="sourcesBox">
+        <span class="eyebrow" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#F0B08D">Sources & crédibilité</span>
+        <h2>La partie ressources doit s’appuyer sur des sources solides.</h2>
+        <p>Chaque article doit citer des études, rapports ou données reconnues. C’est ce qui transformera Atlas Studio en expert crédible, pas seulement en joli site.</p>
+        <div class="sourceList">
+          <div class="sourceItem"><b>Google / Think with Google</b><span>Usages de recherche, parcours client, comportement voyageurs.</span></div>
+          <div class="sourceItem"><b>BrightLocal</b><span>Avis clients, SEO local, confiance et réputation.</span></div>
+          <div class="sourceItem"><b>Skift / PhocusWire</b><span>Tendances tourisme, distribution et IA dans le voyage.</span></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card callout">
+  <section class="ctaSection">
+    <div class="wrap">
+      <div class="ctaBox">
         <div>
-          <h3 style="margin:0 0 6px;">Vous voulez savoir où votre visibilité bloque aujourd’hui ?</h3>
-          <p style="margin:0; color:var(--muted);">
-            Je peux analyser votre présence actuelle sur Google Maps et les signaux qui influencent
-            votre compréhension par les moteurs IA.
-          </p>
+          <h2>Vous voulez tester votre visibilité IA ?</h2>
+          <p>Envoyez votre fiche Google et recevez une première analyse.</p>
         </div>
-        <a class="btn cta" href="index.html#leadmagnet">Recevoir un audit gratuit</a>
+        <a class="btn primary" href="index.html#leadmagnet">Analyser mon établissement</a>
       </div>
     </div>
   </section>
@@ -573,14 +434,13 @@
 
 <footer>
   <div class="wrap foot">
-    <div>
-      <strong>LocalBoost IA</strong><br>
-      <span class="muted">Visibilité locale Google & IA pour les entreprises touristiques</span>
-    </div>
-    <div>
-      <a href="index.html">Accueil</a>
-    </div>
+    <div><div class="footerTitle">Atlas Studio</div><div class="muted">atlasstudio.pro • © <span id="year"></span></div></div>
+    <div><a href="mailto:contact@atlasstudio.pro">contact@atlasstudio.pro</a></div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
